@@ -2457,7 +2457,7 @@ static void inline Screen_Draw(HDC hScreenDC)
 
 	i = min_a;
 	for(;;) {
-		/*
+/*
 		// sentinel is at end
 		while(PFLAG_ISCLEAR_4(i)) i += 4;
 		while(PFLAG_ISCLEAR(i)) i++;
