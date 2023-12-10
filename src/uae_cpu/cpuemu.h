@@ -12,7 +12,8 @@ cpuop_func *ref_cpufunctbl(void) {return(cpufunctbl[0]);}
 static inline uae_u32 fast_get_ilong(uae_u32 *a)
 {
 	uint32 x = *a; 
-	_asm bswap eax
+	//_asm bswap eax
+	x = x >> 24 | x >> 8 & 0xff00 | x << 8 & 0xff0000 | x << 24;
 	return x;
 }
 #undef get_ilong
@@ -34,6 +35,7 @@ static inline uae_u16 fast_get_iword(uae_u16 *a)
 
 
 #ifdef OPTIMIZED_8BIT_MEMORY_ACCESS
+/*
 static inline uae_u32 fast_get_long(uae_u32 a)
 {
 	uae_u32 *p = (uae_u32 *)( MEMBaseDiff + (DWORD)a );
@@ -45,7 +47,7 @@ static inline uae_u32 fast_get_long(uae_u32 a)
 #define get_long(a) fast_get_long(a)
 
 // This one does not speed up as expected. Why.
-/**/
+
 static inline void fast_put_long(uaecptr a, uae_u32 v)
 {
 	uae_u32 *p = (uae_u32 *)( MEMBaseDiff + (DWORD)a );
@@ -54,5 +56,5 @@ static inline void fast_put_long(uaecptr a, uae_u32 v)
 }
 #undef put_long
 #define put_long(a,v) fast_put_long(a,v)
-/**/
+*/
 #endif //OPTIMIZED_8BIT_MEMORY_ACCESS

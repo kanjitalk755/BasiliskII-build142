@@ -593,7 +593,7 @@ extern struct cputbl op_smalltbl_4[];
 // extern struct cputbl op_smalltbl_5[];
 
 #ifndef STREAMLINED_UAE
-extern cpuop_func *cpufunctbl[65536] ASM_SYM_FOR_FUNC ("cpufunctbl");
+//extern cpuop_func *cpufunctbl[65536] ASM_SYM_FOR_FUNC ("cpufunctbl");
 #endif
 
 enum {

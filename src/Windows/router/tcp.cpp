@@ -79,6 +79,8 @@
 #include "mib\interfaces.h"
 #include "ftp.h"
 
+#include <process.h>
+
 #if DEBUG
 #pragma optimize("",off)
 #endif

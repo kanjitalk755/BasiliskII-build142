@@ -49,7 +49,7 @@
 #define DEBUG 0
 #include "debug.h"
 
-#ifndef _DEBUG
+//#ifndef _DEBUG
 
 // #define BITMAPPED_PAGE_FLAGS
 
@@ -69,7 +69,7 @@
 #define PFLAG_CLEAR_ALL			memset( mainBuffer.bits, 0, sizeof(mainBuffer.bits) )
 
 
-#endif
+//#endif
 
 
 // Some people may have outdated Platform SDK.
@@ -2457,6 +2457,7 @@ static void inline Screen_Draw(HDC hScreenDC)
 
 	i = min_a;
 	for(;;) {
+		/*
 		// sentinel is at end
 		while(PFLAG_ISCLEAR_4(i)) i += 4;
 		while(PFLAG_ISCLEAR(i)) i++;
@@ -2470,15 +2471,15 @@ static void inline Screen_Draw(HDC hScreenDC)
 			PFLAG_CLEAR(i);
 			i++;
 		}
-
-		y = mainBuffer.pages[j].top;
-		line_count = mainBuffer.pages[i-1].bottom - y + 1;
+*/
+		y = mainBuffer.pages[0].top;
+		line_count = mainBuffer.pages[mainBuffer.memLastPage].bottom - y + 1;
 
 #ifdef OPTIMIZED_8BIT_MEMORY_ACCESS
 		VirtualProtect( (LPVOID)(mainBuffer.memStart + offset), bytes, PAGE_READONLY, &OldProtect );
 #else
 		if(!pfnGetWriteWatch) {
-			VirtualProtect( (LPVOID)(mainBuffer.memStart + offset), bytes, PAGE_READONLY, &OldProtect );
+		//	VirtualProtect( (LPVOID)(mainBuffer.memStart + offset), bytes, PAGE_READONLY, &OldProtect );
 		}
 #endif
 
@@ -2525,6 +2526,7 @@ static void inline Screen_Draw(HDC hScreenDC)
 				bPalette
 			);
 		}
+		break;
 	}
 
 	mainBuffer.very_dirty = 0;
@@ -2569,7 +2571,7 @@ unsigned int WINAPI redraw_thread(LPVOID param)
 	} else {
 		while(screen_inited) {
 			Sleep(sleep_ticks);
-			if(mainBuffer.dirty && screen_inited) {
+			//if(mainBuffer.dirty && screen_inited) {
 				grab_draw_mutex();
 				hScreenDC = GetDC(hMainWnd);
 				if(hScreenDC) {
@@ -2577,7 +2579,7 @@ unsigned int WINAPI redraw_thread(LPVOID param)
 					ReleaseDC(hMainWnd,hScreenDC);
 				}
 				release_draw_mutex();
-			}
+			//}
 			if(m_show_real_fps) {
 				frame_counter++;
 				if(GetTickCount() >= showtime && screen_inited) {

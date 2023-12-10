@@ -71,7 +71,7 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /YX /FD /GZ /c
-# ADD CPP /nologo /Gz /Zp4 /MT /W3 /Gm /GX /ZI /Od /I ".\include" /I ".\uae_cpu" /I "..\include" /I "..\uae_cpu" /I ".\Windows" /I "..\Windows" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /FR /FD /c
+# ADD CPP /nologo /Gz /Zp4 /MTd /w /W0 /Gm /GX /ZI /Od /I ".\include" /I ".\uae_cpu" /I "..\include" /I "..\uae_cpu" /I ".\Windows" /I "..\Windows" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /FR /FD /c
 # SUBTRACT CPP /YX
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
@@ -873,46 +873,10 @@ SOURCE=.\MASM\LISTING.INC
 # Begin Source File
 
 SOURCE=.\uae_cpu_windows\Memory.cpp
-
-!IF  "$(CFG)" == "BasiliskII - Win32 Release"
-
-!ELSEIF  "$(CFG)" == "BasiliskII - Win32 Debug"
-
-# PROP Exclude_From_Build 1
-
-!ELSEIF  "$(CFG)" == "BasiliskII - Win32 Profile"
-
-!ELSEIF  "$(CFG)" == "BasiliskII - Win32 Win9x"
-
-# ADD CPP /O2
-# SUBTRACT CPP /YX /Yc /Yu
-
-!ENDIF 
-
 # End Source File
 # Begin Source File
 
 SOURCE=.\uae_cpu_windows\Newcpu.cpp
-
-!IF  "$(CFG)" == "BasiliskII - Win32 Release"
-
-# ADD CPP /O2 /FAs
-# SUBTRACT CPP /YX /Yc /Yu
-
-!ELSEIF  "$(CFG)" == "BasiliskII - Win32 Debug"
-
-# PROP Exclude_From_Build 1
-
-!ELSEIF  "$(CFG)" == "BasiliskII - Win32 Profile"
-
-!ELSEIF  "$(CFG)" == "BasiliskII - Win32 Win9x"
-
-# ADD BASE CPP /O2 /FAs /Yu
-# ADD CPP /O2 /FAs
-# SUBTRACT CPP /YX /Yc /Yu
-
-!ENDIF 
-
 # End Source File
 # Begin Source File
 
@@ -1517,49 +1481,7 @@ SOURCE=..\uae_cpu\fpp.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=..\uae_cpu\memory.cpp
-
-!IF  "$(CFG)" == "BasiliskII - Win32 Release"
-
-# PROP Exclude_From_Build 1
-
-!ELSEIF  "$(CFG)" == "BasiliskII - Win32 Debug"
-
-!ELSEIF  "$(CFG)" == "BasiliskII - Win32 Profile"
-
-# PROP BASE Exclude_From_Build 1
-# PROP Exclude_From_Build 1
-
-!ELSEIF  "$(CFG)" == "BasiliskII - Win32 Win9x"
-
-# PROP BASE Exclude_From_Build 1
-# PROP Exclude_From_Build 1
-
-!ENDIF 
-
-# End Source File
-# Begin Source File
-
-SOURCE=..\uae_cpu\newcpu.cpp
-
-!IF  "$(CFG)" == "BasiliskII - Win32 Release"
-
-# PROP Exclude_From_Build 1
-
-!ELSEIF  "$(CFG)" == "BasiliskII - Win32 Debug"
-
-!ELSEIF  "$(CFG)" == "BasiliskII - Win32 Profile"
-
-# PROP BASE Exclude_From_Build 1
-# PROP Exclude_From_Build 1
-
-!ELSEIF  "$(CFG)" == "BasiliskII - Win32 Win9x"
-
-# PROP BASE Exclude_From_Build 1
-# PROP Exclude_From_Build 1
-
-!ENDIF 
-
+SOURCE=..\uae_cpu\memory.h
 # End Source File
 # Begin Source File
 

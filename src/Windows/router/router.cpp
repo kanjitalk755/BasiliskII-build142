@@ -43,6 +43,7 @@
 #include "mib\interfaces.h"
 #include "dump.h"
 
+#include <process.h>
 
 #if DEBUG
 #pragma optimize("",off)

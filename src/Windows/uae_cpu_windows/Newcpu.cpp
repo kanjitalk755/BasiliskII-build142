@@ -79,7 +79,8 @@ cpuop_func *fake_cpufunctbl[65536];
 cpuop_func **cpufunctbl = fake_cpufunctbl;
 #endif
 #else
-cpuop_func *cpufunctbl[65536];
+cpuop_func *real_cpufunctbl[65536];
+static const cpuop_func **cpufunctbl = real_cpufunctbl;
 #endif
 
 static int caar = 0, cacr = 0;
@@ -378,7 +379,7 @@ void _declspec(naked) DIW_trap_handler (void) REGPARAM
 	}
 }
 
-static void build_cpufunctbl ( cpuop_func *cpufunctbl[65536] )
+static void build_cpufunctbl ( cpuop_func **cpufunctbl)
 {
   int i;
   unsigned long opcode;
@@ -503,7 +504,7 @@ void init_m68k (void)
 
 #else
 	do_merges ();
-	build_cpufunctbl ();
+	build_cpufunctbl (cpufunctbl);
 #endif
 }
 
@@ -1466,7 +1467,7 @@ static void m68k_run_1 (void)
 	setup_frame();
 }
 
-#elif COUNT_INSTRS
+#elif 1		//COUNT_INSTRS
 
 static void m68k_run_1 (void)
 {

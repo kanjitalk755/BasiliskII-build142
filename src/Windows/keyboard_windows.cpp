@@ -24,7 +24,7 @@
 #include <stdio.h>
 #include "sysdeps.h"
 #include "keyboard_windows.h"
-#include "\BasiliskII\src\Windows\Gui\BasiliskIIGUI\Resource.h"
+#include "\BasiliskII_win32\src\Windows\Gui\BasiliskIIGUI\Resource.h"
 
 #define DEBUG 0
 #include "debug.h"

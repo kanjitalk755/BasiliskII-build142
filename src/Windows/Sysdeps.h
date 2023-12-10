@@ -83,7 +83,7 @@
 
 #ifndef WIN9X
 // Speed up NT version. USE_COMPILER needs this.
-#define OPTIMIZED_8BIT_MEMORY_ACCESS
+//#define OPTIMIZED_8BIT_MEMORY_ACCESS
 #endif
 
 #ifdef OPTIMIZED_8BIT_MEMORY_ACCESS
@@ -96,7 +96,7 @@
 
 
 // Recommended.
-#define DO_INTERLOCKED
+//#define DO_INTERLOCKED
 
 // I don't need prefetch.
 #define DISABLE_PREFETCH 1
