@@ -1,0 +1,716 @@
+Win32 - 06.January.2001, build 142
+  - BasiliskII.exe is now the assembly optimized version and should work on all
+    Windows versions. BasiliskII_old.exe is the unoptimized version provided for
+    testing purposes. Thanks to Gwenolé Beauchesne for his suggestions.
+  - Fix: the assembler version of MOVE (Ax)++,(Ay)++ [code 20d8] was faulty.
+    Thanks to Akihiko Matsuo for providing this fix.
+  - Fix: NUMLOCK keyboard code didn't have the extended flag set, again thanks to
+    Akihiko Matsuo. For this change to take effect, you need to delete your old
+    "BasiliskII_keyboard" keyboard file.
+  - Fix: the NAT/Router did not always send other (non-TCP/IP) ARP requests to the NIC.
+  - Fix: some other minor NAT issues.
+  - Fix: Basilisk II may have crashed when a video mode was selected that was larger
+    than the current Windows mode.
+  - Fix: a video tilt problem when switching from GDI mode to full screen mode
+    ("equal_scanline_lengths" was uninitialized if started in GDI mode).
+  - An option to disable Windows screen saver while B2 is running. GUI "Misc" page.
+  - An option to change the keyboard layout code. GUI "Keyboard" page.
+  - Updated "NAT-Router FAQ.html" and "Tech.win32.txt".
+
+
+Win32 - 26.December.2000, build 141
+  - An option to use Windows Internet connection. GUI "Router" page.
+    See the included document "NAT-Router FAQ.html" for details.
+  - Fixed a problem in ejecting (zip) removable media under Win9x.
+  - An option to enable/disable alt-enter (GUI keyboard page).
+  - Energy saving modes. In GUI "Misc" page.
+  - GUI window made a bit smaller so that fits onto a smaller screen
+    ( exactly how small depends on the small/large Windows system font and the video card drivers ).
+  - WinMe ethernet INF script fix, thanks to Mike Allison.
+  - Reverted back to the old timer.cpp code.
+  - More compatible timer code activated.
+
+
+Win32 - 15.July.2000, build 135 (INTERNAL)
+  - Win2k ethernet driver now works for users with no administrator rights.
+    However, it may be necessary to run Basilisk II once with admin right
+    after installing the ethernet packet driver.
+  - Prevented Windows from beeping with some Alt key combinations.
+  - An attempt to better tolerate faulty ASPI drivers.
+  - Fixed a bug in FPU FTAN opcode (didn't pop the value 1.0 that x86 partial
+    tangent FPTAN always pushes to stack for 8087/287 compatibility).
+  - One optimization bug fix.
+  - MMU32bit initialization fix.
+  - GUI memory page: displays some more ROM file info.
+
+
+Win32 - 18.June.2000, build 130
+  - Workaround for one compiler bug.
+  - Updated timer.cpp code.
+
+
+Win32 - 09.June.2000, build 127
+  - Fixed some DirectX problems (palette corruptions and freezes when switching
+    between full screen and windowed modes).
+  - Fixed a bug that caused a crash on restart if audio was enabled.
+  - New audio synchronization code.
+  - Fixed a bug in the NT version causing Corel WordPerfect 3.5 "File/Save As" crashing.
+  - Fixed a bug in the NT version causing QuickTime 4 hanging.
+  - Removed the obsolete NT "palette hack" option.
+
+
+Win32 - 01.June.2000, build 126
+  - Fixed one regression in the NT version causing Now Utilities freezing.
+  - Some more FPU improvements & fixes.
+
+
+Win32 - 30.May.2000, build 125
+  - New "SMP" GUI page to define thread affinity masks. An affinity mask determines
+    on which CPU's a process or a thread is allowed to run on a system equiped with
+    multiple CPUs. If you have any speed/stability problems on a SMP system, you
+    may want to adjust these settings. Windows 9x supports only one CPU.
+  - FPU normalization code was accidentally left out, causing the scroll bars
+    not working under MacOS 8.x with certain ROMs (thanks, Sérgio).
+  - Minor fixes in FPU rounding mode handling.
+  - Minor improvements in FPU quotient byte handling.
+
+
+Win32 - 28.May.2000, build 124
+  - Rewritten the FPU, now uses 10-byte (64-bit mantissa) floating point code,
+    partially in assembly. I'm not aware of any significant FPU bugs anymore.
+  - The FPU is now enabled by default, since it seems to be working fine.
+  - "Get hardware volume" (for audio beeps) is now enabled by default.
+  - More than a hundred (most frequently used) CPU opcodes written in assembly
+    (NT/Win2k version only). Optimized for CPUs PII or better.
+  - Fixed a trace flag bug that caused CodeWarrior single-stepping not working.
+  - Fixed a bug in long division remainder sign bit handling. The bug caused some
+    DateTimeUtils functions to fail.
+  - A new system menu command to temporarily remove the ROM write protection.
+    NT version only (I don't expect this to be useful to anybody else but me)
+  - Just for fun: startup sound for those 1MB ROMs that have the sound embedded
+    in uncompressed form. Enabled by default (if audio is enabled), can be disabled
+    in GUI audio page. Saves the sound in a file named as "startup_XXXXXXXX.wav",
+    where XXXXXXXX is the ROM file checksum. This allows you to replace the sound file.
+    Please don't send any bug reports related to startup sounds.
+  - An attempt to make the cursor less jumpy when using the alternate
+    mouse emulation mode.
+  - Some new "undocumented" options:
+      Disable maximize gadget:
+        BasiliskII.ini [GUI] Disable Maximize=1
+      Run multiple copies of BasiliskII simultaneously:
+        BasiliskII.ini [Debug] allow_multiple_instances=1
+  - Removed some unused code.
+  - There is a problem in handling file names longer than 31 characters with the
+    external file system (My Computer). Shorten the file names if you have to.
+
+
+Win32 - 24.April.2000, build 122
+  - Reorganized code to reduce the performance hit introduced by the new 60Hz code.
+  - Scrap manager A-line traps hooked.
+  - The checked status of the new system menu commands was not updated correctly.
+  - The crash recovery code was not enabled.
+  - A mechanism to shut down properly the one-second interrupt thread.
+
+
+Win32 - 23.April.2000, build 121
+  - Implemented clipboard text transfer Host -> Mac.
+  - Fix by Toshimitsu Tanaka: Kanji character set was incorrect in Mac -> Host
+    clipboard text translation.
+  - Implemented 15, 16, 24 and 32 bit GDI screen modes for the NT version.
+  - Some miscellaneous screen draw optimizations.
+  - Fixed one DirectX full screen video corruption problem.
+  - Parameter RAM saved to a different file for each ROM checksum.
+  - More controlled shutdown when the application crashes.
+  - Possibility to save changes to undoable volumes before a crash.
+  - New mount mode: similar to "undoable", but saves changes without asking
+    questions if the system was shut down properly.
+  - Fixed: the "undoable" commit prompt window was sometimes
+    hidden behind the Basilisk II main window.
+  - Fixed: in GUI disk page, when moving items up or down, the mount mode was lost.
+  - Multi-block i/o for undo file.
+  - Increased the undo_buffer hash table size from 1024 to 4096.
+  - Fixed: an id conflict in SCSI GUI dialog.
+  - New GUI mouse page option: "Normal ADB mouse emulation" v.s.
+    "More complete ADB mouse emulation". The latter is to be used with games
+    accessing the mouse with low level ADB calls (e.g. Apeiron, Marathon).
+  - Some new system menu commands.
+
+
+Win32 - 3.April.2000, build 119
+  - Fixed a memory bank problem in Win9x version. It caused most of
+    the 512 KB ROMs not working properly.
+
+
+Win32 - 2.April.2000, build 118
+  - Two new volume file mount modes: "virtual read/write" and "undoable".
+    See the GUI disk page.
+  - Fixed a problem in switching between full screen mode and windowed mode.
+  - Sorted the GUI video mode list.
+  - Win9x GUI ethernet page: PPPMac removed.
+  - Fixed a bug that caused multiple about box items in the system menu.
+
+
+Win32 - 12.March.2000, build 116
+  - GUI keyboard page: Reserve Alt-Space for MacOS (NT)
+
+
+Win32 - 12.March.2000, build 115
+  - Ethernet driver for Windows 2000 professional. See Ethernet.win32.txt for details.
+  - Now remembers last 4 sent ethernet packets (instead of 1) for echo detection.
+    This may or may not cure some AppleTalk related networking problems.
+    If you want to experiment with a different echo buffer size, change
+    MAX_ECHO in ether_windows.cpp.
+  - Workaround for one NT4 bug which caused the ethernet adapter sometimes
+    be unavailable after relaunching BasiliskII or the GUI.
+  - Integrated Gwenolé Beauchesne's faster memory bank method to the
+    Windows 9x compatible version.	
+  - Multiply and division written in assembly for minor speed boost in integer
+    arithmetics. The exception handler takes care of division overflow and
+    division by zero checking.
+  - Increased the reported free space of My Computer from 64MB to 1GB.
+    This helps in copying large files from Mac to the host.
+  - Fixed a bug in NT audio CD support: sub-Q channel i/o control request didn't
+    initialize the format code, causing reading of the audio cd position
+    information to fail.
+  - Fixed a bug that caused the error message "Failed to initialize video." under Win2k
+    if the "Disable Windows 98 screen optimizations" was not checked.
+  - Two more "undocumented" BasiliskII.ini settings:
+      [Debug] allow_all_rom_sizes=0 or 1
+      [Debug] disable_internal_wait=0 or 1
+  - Inlined HasMacStarted() and TriggerInterrupt().
+  - BlockMove() replacement return value & flags were missing.
+  - timer.cpp: minor optimizations.
+  - setup_frame(), fake_cpufunctbl_all_funcs(), m68k_run_1():
+    jump through the indirect op code table instead of the real table.
+  - New media check hotkeys:
+      Shift-Ctrl-F8: remount all floppies (including Zip disks)
+      Shift-Ctrl-F9: remount all CD's
+      Shift-Ctrl-F10: remount all hard disk partitions
+    Shift-Ctrl-F11 works as before; mounts all floppies and CD's.  
+  - Implemented fixed SCSI target id's.
+  - Changed the default priority of the 1Hz thread to be "above normal".
+  - Removed an unnecessary delay when entering the GUI SCSI page
+    (allocated optimal sized ASPI buffer; the GUI does not need it).
+  - Fixed keyboard codes "Numpad Enter" and "Numpad Divide". If you have
+    customized keyboard, you may need to delete the file "BasiliskII_keyboard"
+    for this fix to take effect, or at least save the keyboard layout once.
+  - Note for those having problems with GetROM utility: remember to boot your
+    Mac with extensions off before attempting to dump the ROM image.
+  - Updated documentation.
+  - Added minimize button.
+  - Added maximize button (switches to full-screen mode).
+  - Added system menu.
+  - Added about box to system menu.
+  - Added icon.
+  - Possibility to set video adapter vertical refresh rate (for DirectX full-screen
+    mode and NT linear frame buffer mode). In general, it's better to set the refresh
+    rates in the display control panel. Unfortunately not all adapters allow this;
+    that's the reason for this feature.
+    If the refresh rate is invalid, monitor default setting is used instead.
+    Under NT4, the DirectX 5 hack is needed, or a rather new service pack is required.
+    Which one is the minimum -- I don't really know. Works with sp5 for me.
+  - Version number set to 0.8.
+  - Customized "My Computer" name was read from an incorrect registry key under Win2k.
+  - Removes trailing white space from preference entries (there were problems when
+    copying/pasting a preference file from a web page).
+  - $Null devices (floppy, CD-ROM) not supported any more.
+  - Printer/Modem port FILE output paths can be customized.
+  - Support for multiple preference files. General page in GUI.
+
+
+Win32 - 4.December.1999, build 102
+  - Frank M. Siegert fixed a bug in b2ether.vxd that caused Windows 9x
+    hang on shutdown.
+  - Attempted to fix various regressions introduced by the build 100.
+  - Fixed a bug that caused ExtFS to show only partially the contents
+    of a folder if there was special characters in some file names.
+
+
+Win32 - 27.November.1999, build 101
+  - Fixed a bug that caused colors to be incorrect in the Win9x compatible
+    version (color depths 15,16,24 and 32). Note that these color depths
+    are still incorrect in the NT version when using GDI mode; this is a
+    completely different problem, just happens to look similar.
+
+
+Win32 - 27.November.1999, build 100
+  - MacOS 8.x Finder copy bug fixed by Christian's new memory management code.
+  - Introducing Christian's latest and greatest achievement, the ExtFS file system:
+    - Enabled and configured in "My Computer" GUI page. Disabled by default in
+      this initial release, will be enabled by default in subsequent builds.
+    - Installs a "My Computer" (or whatever you have named it in Windows) icon on
+      the desktop, with transparent access to your drives.
+    - This is a much safer way to manipulate files than any other option.
+      Even in the worst case, only the accessed file may get corrupted (I haven't
+      seen even that so far).
+    - A virtual Desktop folder is created in the folder where you have the
+      Basilisk II executable file.
+    - Virtual desktop folder is currently always in the same folder where the
+      Basilisk II executable file is -- not in the working directory.
+    - "Trash"ing files from other drives than where the "Desktop" is located 
+      is currently slow, due to the copying to the "Virtual Desktop\Trash".
+      This is probably going to change some time in future.
+    - Creates folders ".finf" and ".rsrc" in each accessed directory. ".finf"
+      contains Finder information of the files, ".rsrc" contains resource forks.
+    - Note that since all your drives are within one big "virtual drive",
+      Finder defaults to moving (instead of copying) when you drag&drop
+      items between real drives. Use option key to force a copy operation.
+    - Customizable file type/creator mappings, compatible with HFVExplorer.
+    - Listing contents of very large directories may be slow, because MakeFSSpec
+      trap word is not implemented.
+    - Known bugs: some documents may not open from ExtFS (for example, CodeWarrior
+      crashes when opening a file, Disk Copy refuses to mount images).
+      The reported free space is not correct.
+      With some 512k ROM's, the ExtFS may not work in 68020 mode.
+      Use 68040 mode for best results.
+      Applications seem to launch fine. Copying and moving files has no known bugs.
+  - Minor optimizations in screen drawing (1,2,4,24 bit depths)
+  - Read-only hfv files can now be shared between networked B2 workstations.
+  - An attempt to fix floppy installation problems thanks to Christian
+    now doing sony periodic actions during interrupt time, instead of relying
+    applications co-operatively calling SystemTask().
+  - New periodic action code moved from 60Hz interrupt to (a new) 1Hz interrupt
+    for better performance.
+  - All removable media (Zip etc) moved to floppy page of the GUI.
+    You should remove them from the Disk tab and reinstall in Floppy tab.
+  - 68040 emulation. Combined Christian's 68040 code with my modest efforts.
+    No MMU, otherwise rather complete.
+  - Default cpu changed to 68040 (first-time installation) as it seems to
+    work rather well.
+  - Optimized interrupt code.
+  - "Disable low memory caching" option moved from Experiment page to Misc page.
+    It seems worthwhile to keep this option as it sometimes speeds up OS 8.
+  - Experiment page removed.
+  - Fixed clock time zone error (thanks to Toshimitsu Tanaka).
+  - Wheel mouse delay changed from 40ms to 20ms.
+  - CPU prefetch code disabled. Dropped UAE 68000 "more compatible" code.
+  - Added some more sanity checks for audio parameter initialization.
+  - Alt-enter (toggle window <-> full screen) works now in windowed Direct X mode.
+  - For those having trouble with alert sounds: enable "Get hardware volume"
+    in audio page. Be aware of that this may break some QuickTime
+    applications under System 7.x (notably Myst). Maybe something else too,
+    please keep this in mind if you suddenly have unexpected problems.
+  - Minor cosmetic changes (GUI keyboard layout dialog etc).
+
+  - A version of Basilisk II that runs only under Windows NT:
+    - Faster. Uses direct memory access (no memory banks).
+    - EA code rewritten for speed.
+    - Somewhat less stable than the generic version, meaning that a buggy Mac application
+      may crash this version, while the generic version would only drop to Finder.
+      Most of the crashes seems to be fixed now.
+    - In GDI mode high color depths (15,16,24,32) display colors incorrectly.
+      Direct X modes support all color depths.
+    - The frame buffer and the ROM are shamelessly relocated to different addresses to
+      adapt to the virtual address space limitations of different WinOS flavors. This may
+      cause problems with older ROMs (although I haven't seen this happening).
+    - In future, all new builds are going to use this code base, because
+      it lays foundation of using the DR (dynamic recompilation) technology.
+    - DR code is disabled and not yet included in the source archive (because it's
+      not yet useable to anybody).
+    - The GUI always launches the program "BasiliskII.exe". If you decide that
+      you wish to keep using this NT version, rename the file "BasiliskIINT.exe"
+      to be "BasiliskII.exe".
+
+
+Win32 V0.7 (alpha) - 3.October.1999, build 94
+  - Fixed an error when switching from full screen mode to windowed mode
+    under classic emulation (the contents of the Mac window was displaced).
+  - Edited the "mount partition as read/write" warning dialog texts.
+  - Removed the message "The floppy was ejected ...".
+  - Many cd, floppy and other removable media access fixes. Mostly for Windows NT,
+    but some of them apply to Win9x too.
+  - To access Mac formatted Zip media under NT, mount the drive as a PHYSICALDRIVE.
+  - To access PC Zip partitions under NT, mount Zip as <letter>:
+  - Do not mount Zip media both as PHYSICALDRIVE and drive letter.
+  - To boot from a Zip under NT, mount as a PHYSICALDRIVE and move it to top
+    in the "installed disks" list.
+  - Hard disk PHYSICALDRIVEs are always read only, partitions can be mounted
+    as read/write.
+  - Possibility to mount removable media read-only.
+  - Another FPU bug fixed: the value of the quotient byte was not calculated
+    correctly. Thanks to Marciano Siniscalchi, Jim Watters and Dan for
+    their help in finding this bug.
+  - Fixed a bug in EtherReset(). The installed protocol list was not cleared.
+    This bug caused crashes on restart when ethernet was enabled.
+  - Fixed an ethernet bug in adding/removing multicast addresses. This bug *may*
+    have caused the messages "Your AppleTalk connection was interrupted", resulting
+    the zone information to be lost.
+  - PacketAddMulticast() and PacketDelMulticast() always report success because
+    some NICs report ok status when the given multicast address is already defined,
+    but other report a failure.
+  - Fixed an ethernet bug in removing attached protocol. Thanks to Peter Lambert
+    for his bug reports which helped in finding ethernet bugs.
+  - Automatic selection of correct 15/16 bit screen color mode.
+  - Support for low color modes (1, 2 and 4 bits). The 2 bit mode works
+    properly only in DX full screen.
+  - 24 bit Direct X full screen mode (for most screen cards). Colors may be wrong
+    with some video adapter pixel formats. Somewhat slower than the 32 bit full
+    screen mode.
+  - Inlined set/get interrupt flag functions for smaller latency times.
+  - Mouse wheel support under Windows 95. Not tested, I don't have IntelliMouse
+    drivers. Please let me know whether it works or not.
+  - Changed the default priority of the ethernet threads to "normal".
+  - Changed the default value of "nosoundwheninactive" to "true".
+  - New "Experiment" page in the GUI. The first experiment is to disable
+    caching of the lowest 64kB of Mac RAM. How does this affect the performance?
+    Try it with a single Mac application, and with many apps running.
+  - An option to automatically restart the GUI after Basilisk II is terminated.
+    See the "Misc" page.
+  - Removed the unusable "PPPMAC" entries from Win9x ethernet page.
+  - "Disable Windows 98 screen optimizations" did not always work, fixed.
+  - Minor optimization in classic emulation Direct X screen code.
+  - Minor optimization in exception handler.
+  - Minor optimization in screen drawing.
+  - Always allows media removal on exit under NT. (If the CD was not ejected
+    in Basilisk II, it sometimes could not be ejected in Windows).
+    This bug was fixed in build 92 but was left undocumented.
+
+
+Win32 V0.7 (alpha) - 19.September.1999, build 92
+  - Some Direct X fixes.
+  - Some speed optimizations.
+  - One more FPU bug fixed, some still remain.
+  - A new attempt to write accurate 60Hz timer. *May* cause problems on
+    low-end machines. If it does, disable it in the GUI "Debug" page.
+  - Mouse wheel support:
+    The wheel can be used to send either line up/line down or
+    page up/page down character sequences.
+    Wheel click can be used to either toggle between vertical and horizontal
+    scrolling, to send a "Command - Left Arrow" combination, or a user-defined
+    character sequence. "Command - Left Arrow" equals to the "Back" button in 
+    Netscape an IE 4. Tested under NT 4.0 and Windows 98. Doesn't work under
+    Windows 95. See the GUI "Mouse" page.
+  - The GUI "Keyboard+Mouse" page was split to two separate pages.
+  - Possibility to mount hard disk partitions/hard disks read/write.
+    See the GUI "Disk" page. Use *ONLY* if you know what you're doing.
+    Do *not* use the "SCSI" page to mount volumes accessible in Windows. 
+  - Possibility to mount HFV volume files read-only.
+  - Windowed GDI mode now uses whatever color depth the user has chosen.
+    Previously it always forced the Windows Control Panel value (except
+    when selecting between 15/16 bit modes), yielding low performance.
+    So if you run the Mac in 256 colors using the GDI mode, and still
+    want to use high color mode in Windows, you will have a big speed win.
+    Windowed Direct X mode works the old way (forces the control panel setting)
+    and therefore may be actually slower than the GDI mode in some cases.
+  - Classic emulation works to some extent. Tested only minimally.
+    System 7.5.5 didn't boot in my test, 6.0.8 did. The window is always 512x342
+    pixels, either windowed GDI mode or full screen Direct X 640x480 mode.
+  - Removed the words "[slow mode]" from the caption when B2 is inactive.
+  - Alt-Enter toggles between windowed GDI screen mode and full-screen 
+    Direct X mode, has no effect if other modes are used. 
+    ( Hint: if B2 crashes in Direct X full screen mode, it's a good idea try to
+    switch back to the GDI mode before killing the application.)
+  - Under NT, it is possible to define whether the following key combinations
+    are trapped by Windows or MacOS: Control-escape, Alt-escape, Alt-tab.
+    Previously they were always trapped by MacOS. In the spirit of making
+    everything possible configurable, you can now change this behaviour in
+    the Keyboard GUI tab.
+
+
+Win32 V0.7 (alpha) - 1.August.1999, build 90
+  - Serial: kSERDInputBuffer implemented (MacOS can define the size of the
+    serial port input buffer)
+  - Fixed an internal timer bug introduced by build 89.
+  - Serial: possible eternal loop in KillIO fixed
+  - Changed to use more accurate timing. This may (or then again, maybe not)
+    cause problems for non-intel cpu's. If it does, Basilisk II will detect
+    this and refuse to run with an error message "Your hardware does not support
+    high resolution timers". Let me know if this happens.
+  - Reminder: use the FPU only if you must. The remaining bugs may still
+    sometimes hang.
+
+
+Win32 V0.7 (alpha) - 31.July.1999, build 89
+  - Audio muting now works.
+  - Fixed a bug that caused the volume control slider jump around.
+    Note that it still may jump by a very small amount because the volume
+    levels are converted to Windows values and back to Mac values again.
+    This is needed to keep the volume controls in Windows and Mac in sync.
+  - Alert sounds still don't work. Personally I find the alert sounds very
+    annoying anyway, so don't expect them to be fixed any time soon.
+  - Fixed a bug that sometimes caused the sound thread not terminating properly
+    when shutting down Basilisk II.
+  - Some minor audio thread performance optimizations.
+  - The GUI memory page shows some ROM file info.
+  - If Direct X fails to initialize, a more specific error messages is given.
+  - Now 68030 mode works with some more 1 MB ROMs without FPU (not all of them though).
+
+
+Win32 V0.7 (alpha) - 27.July.1999, build 87
+  - Sound & volume control. Check the "Audio" GUI page and Mac "Sound"
+    control panel. Mute does not work correctly.
+  - CPU type selection 68020/68030. Use 68030 + 32bit clean 512kB ROM if you
+    need OpenTransport. Remember that some ROM's only boot with FPU enabled.
+    Otherwise use 68020 since some applications may crash when using 68030 setting.
+  - An option to automatically disable sound when Basilisk II is inactive.
+  - Option "noaudio" renamed to be "nosound".
+  - Priority settings for the audio thread.
+  - Fixed bugs in the FPU. Most software (but not all) should work with it now.
+    The following floating point instructions had bugs: 
+      FINT, FINTRZ, FGETEXP, FMOD, FREM, FSCALE, FMOVEM list handling,
+      FSINCOS, FMOVECR, FMOVE, FDBcc, FMOVEM Control Registers An,
+      Condition code "Not Greater Than or Equal".
+  - The FPU is still disabled by default because some bugs remain.
+  - FPU conversion routines rewritten for speed.
+  - Some FPU commands rewritten for speed.
+  - FPU conversion routines now handle NaN and infinity better.
+  - 80 bit assembler FPU code (currently disabled).
+  - Try to enable the FPU for more web browsing speed (but remember that some
+    applications may still work incorrectly). Netscape 4.0.x seems to work,
+    but 3.0.4 may be the safest choice.
+  - "Create new HFV file" GUI command now zeroes the first megabyte
+    to prevent the possibility of "ghost" partitions.
+  - Default priority values for serial port threads dropped to "Normal".
+  - Ethernet now works under NT when logged in as a normal user
+    without administrator rights.
+  - Timer code fixes.               
+  - Some other minor fixes.
+  - The source code archive now contains pre-generated UAE files, you
+    don't have to run gencpu & build68k unless you change them. Building
+    the project is therefore very easy; so you don't have any excuse to not
+    contribute anymore ;) Seriously, there has been no source code
+    contributions to the Windows port so far. What a shame.
+
+
+Win32 V0.6 (alpha) - 8.July.1999, build 81
+  - Fixed a problem in shutting down Linear Frame Buffer mode, sometimes
+    was hung in a black screen.
+  - Fixed a problem with custom keyboard codes. They were not always used
+    if full path name was not specified for the keyboard file name.
+  - Attempt to fix the daylight saving time bug (clock off by one hour)
+  - Some 8 bit palette fixes. The option "NT Direct X palette hack" is probably not
+    needed any more. Windowed 8 bit Direct X mode still has a palette problem.
+  - New optimizations: 64 bit integer multiply/division and HAVE_GET_WORD_UNSWAPPED,
+    yielding a minor (maybe 10%-15%) performance boost.
+  - GUI SCSI page: Added a confirmation dialog when adding a SCSI hard disk.
+  - Removed some unnecessary delays when starting up and shutting down.
+
+
+Win32 V0.6 (alpha) - 5.July.1999, build 79
+  - Switched compiler from VC5 to VC6
+  - Merged v0.6 changes: clock fix, Classic emulation, etc, but
+    Classic emulation does not work yet in Windows port.
+  - Another attempt to fix the shutdown crash (build 78 fix was no good).
+  - Fixed a bug that caused Win9x not to shut down properly if there were
+    pending ethernet packets.
+  - Fixed a crash when ROM file was not found.
+  - Other miscellaneous fixes.
+  - Adjusted first installation default settings.
+
+
+Win32 V0.5 (alpha) - 1.July.1999, build 78
+  - Fixed two problems ín ethernet code that could often cause
+    a hang or a crash.
+  - Fixed a couple of shutdown issues.
+
+
+Win32 V0.5 (alpha) - 27.June.1999 (B), build 76
+  - Fixed a problem accessing ethernet page when an adapter was
+    not yet properly installed.
+
+
+Win32 V0.5 (alpha) - 27.June.1999, build 75
+  - New GUI option (keyboard/mouse page): sticky menu bar clicks (OS8 style)
+    The main menu bar is kept open even after the mouse button is released,
+    under all OS versions (of course OS 8 has this feature already).
+    Enabled by default. There are extensions to do the same thing, but it's
+    faster to handle this in native code.
+  - Bug fix: windowed mode mouse was not captured.
+  - Bug fix: switching desktop (with shift-control-F11 in LFB or DX full screen mode)
+    did not always restore pixel format.
+  - Alt keys are not trapped any more if Basilisk II window is not active.
+  - GDI specific screen code optimizations.
+  - Ethernet driver for WinNT (b2ether.sys). Consult to the document
+    "Ethernet.win32.txt" for details.  Please read it carefully, it contains
+    important information on the usage of the ethernet networking on B2.
+  - Ethernet driver for Windows 98 (b2ether.vxd). Tested also under
+    Windows 95 OSR2. See "Ethernet.win32.txt" for details.
+  - A simple tool program to dump Macintosh ROM to a file.
+  - Changed parameter RAM timeout from one minute to 10 seconds.
+  - Adjusted default parameter RAM thread priority to normal.
+  - Attempted to fix a potential overflow in the screen draw code.
+    This fix may have a side-effect causing a white border at the bottom
+    of the screen when using some screen size/color depth combinations.
+  - An option to disable Windows 98 specific video optimizations.
+  - An option to connect printer port to a file (the file name is hardcoded to be 
+    C:\B2TEMP.OUT, because this is just a test). You still need a printer driver
+    that does not try to read from the device, or at least tolerates the read errors.
+  - Started technical documentation (Tech.win32.txt). At this time, there are
+    only short build instructions.
+  - A new option to use real mode CD drivers under Windows 9x. Requires
+    libraries B2WIN16.DLL and B2WIN32.DLL in the Basilisk II directory.
+    CDEnable.vxd must be installed in \Windows\System directory.
+
+
+Win32 V0.5 (alpha) - 15.June.1999, build 70
+  - Fixed a bug that overwrote the cursor area.
+    (threre was sometimes a white or black rectangle following the cursor).
+  - Makes somewhat better use of video card local memory. For example,
+    if you could previously run a maximum of 1152x864 DirectX mode, you
+    should now be able to reach 1280x1024 mode, etc.
+
+
+Win32 V0.5 (alpha) - 14.June.1999, build 69
+  - Debug page. Options to log some troubleshooting data to a text file.
+    Do NOT send me any files without asking first.
+  - Some more entries in the Mac model name list.
+  - GUI general page: new bootdriver options (boot from cd-rom).
+  - Audio page. Audio is not yet implemented, but there is now
+    an option whether to enable Christian's new "null" audio component
+    or not. It is disabled by default. Enabling it may help you to make
+    some programs run, while some others may stop running. You need
+    to experiment.
+  - Audio page: disable sound instructions for first-time users.
+  - SCSI dialog used ' ' as a separator. Now uses '|'. This fixes a problem
+    in handling vendor names with space characters.
+  - SCSI fixes & improvements:
+      - Splits 6 byte read/write cdb's if too big for ASPI. (Did this already for 10 byte cdb's.
+      - If write6 or read6 commands fail, tries to use 10 byte commands. Some emulated
+        IDE drivers support 10 byte versions only.
+      - Ditto for the mode sense and mode select commands.
+      - The splitting function used to determine the device block size on fly
+        which is unreliable. Now queries the real value from the device.
+      - Autosense implemented.
+      - There can now be 7 SCSI devices instead of 6.
+  - "disablescsi" command is not supported any more. Use the new commands "scsi0",
+    "scsi1", ..., "scsi6" instead. By default, none of your SCSI devices are visible,
+    so you need to enable those you need in the GUI. This change is both a safety
+    measure and an attempt to be more consistent with other ports.
+  - Some media access fixes.
+  - Screen draw code rewritten.
+  - Windows 98 specific screen code optimizations.
+  - Windows 98 specific full screen mode optimizations.
+  - "frameskip" changed to "framesleepticks". It's a value in milliseconds to
+    "sleep" between screen updates. The higher the value, the lower the screen
+    refresh rate. Experiment with values in range 3 .. 30.
+  - Option to display the real frame rate.
+  - Fixed a screen update problem; sometimes extra horizontal line segments were left behind
+  - "cdenable.sys" driver updated. Under NT, update to \Winnt\System32\drivers.
+  - Fixed: alt-F4 was always trapped by Basilisk II, even when targeted to other apps.
+  - Now refuses to run if incompatible version of cdenable.* is detected.
+  - Warns if cdenable.* is not found in correct folder.
+
+
+Win32 V0.5 (alpha) - 27.May.1999, build 63
+  - Mouse should be more responsive now.
+  - Fixed a problem: changes in parameter RAM were not saved if they were
+    changed within the last minute before shutting down.
+  - Thread priorities adjusted. 
+  - Thread priorities can now be customized in the GUI.
+  - Tip 1: those of you having problems with "winmodems" (modems with minimal
+    hardware, AT command set emulated in software), try to adjust the 
+    priorities. Bump the serial port up to the highest notch, and 
+    possibly decrement CPU and/or graphics priorities. You may also try
+    to adjust the 60Hz thread value.
+    Tip 2: those of you running in windowed mode: if you move the Basilisk II 
+    window around and you think other applications should update their windows 
+    faster, reduce the CPU priority by one notch.
+    Feel free to experiment with the settings; you can always revert back
+    to the original settings by pressing the "Set Defaults" button.
+    If you think you have found an optimal set of priorities (for some 
+    specific purpose, or in general), drop me a line.
+
+
+Win32 V0.5 (alpha) - 25.May.1999, build 62
+  - *Experimental* support for LPT ports, minimally tested.
+    Please read what Christian has to say in "README" file about parallel ports.
+    For your convenience, here's a snippet:
+
+      Parallel ports: If you select a parallel port it will look like a serial
+      port to MacOS but Basilisk II will only allow data output and ignore baud
+      rate settings etc. You should be able to get some printers to work with
+      this method (provided that you have the right printer driver, like
+      "PowerPrint").
+
+  - GUI: added LPT ports.
+  - GUI: was not saving ntdx5hack value. Fixed.
+  - GUI: when creating a new volume file, did not always prompt
+         for confirmation if the file existed. Fixed.
+
+
+Win32 V0.5 (alpha) - 24.May.1999, build 61
+  - Implemented GUI (BasiliskIIGUI.exe). No more need to edit the prefs file.
+  - Keyboard code rewritten. If you are using some Mac app that maps
+    charaters to different places, disable it first to see if you need
+    it any more. Keyboard codes can be customized in GUI.
+    (In prefs file, "keyboardfile BasiliskII_keyboard")
+  - "nofpu" option was replaced by "fpu <true/false>", 
+    default is "false" (disabled)
+  - Two options on how to use right mouse button. Eiher drag the window,
+    or send Control + Mouse click combination to MacOS.
+    See the GUI (In prefs file "rightmouse <x>", x=0/1)
+  - "frameskip" implemented, default is 1 (show all frames)
+    There is a maximum of 33 frames per second. For example,
+    "frameskip 3" yields to about 11 frames/second.
+    Has no effect when using linear frame buffer mode, it always
+    draws everything in real time.
+  - Right mouse button double-click is not supported any more.
+    Use the GUI instead.
+  - Control-Shift-F11 now checks all removable media.
+  - New video mode: Windowed Direct X mode "dxwin". 
+    8 bits and 24 bits modes do not work right. Some screen update bugs.
+  - Defining physical drives under Windows NT changed:
+      disk \\.\PHYSICALDRIVEx
+    where x = 0,1, ...
+  - Fixed a Win9x bug: floppies were often mounted read-only.
+  - Fixed various Win9x Zip problems (partition table handling)
+  - Fixed a bug in closing serial port output semaphore.
+  - Added "Null floppy" and "Null CD-ROM" items. Use these if you
+    don't need floppies or CD's. Reduces some screen update jerkiness.
+    If the floppy list or CD list is left empty, all floppies and
+    cd drives in the system are included.
+
+
+Win32 V0.5 (alpha) - 16.May.1999, build 54
+  - Fixed a WinNT floppy problem
+  - Fixed yet another WinNT CD bug
+  - Implemented Win9x floppy (much slower than NT version)
+  - Fixed a bug in win/x/y/b screen mode
+  - Win9x keyboard: right-control maps to Option key
+  - Win9x keyboard: Alt-F4 should work now
+  - Win9x logical disk drives; "disk c:\". For your safety, all fixed disks
+    are mounted read-only. Under MacOS 7.5.x, you will note that some 
+    FAT folders look like system folders; this is a PC Exchange bug.
+    Removable media (Zip etc) is mounted read/write.
+  - If you cannot get IomegaWare working, you can mount Zip disks 
+    with "disk j:\". If you do this, do not use IomegaWare
+    at the same time!
+  - If floppies or Zips mount read-only, you have some file open
+    in Explorer or in some other application. Close them, you can also try:
+      noscsi true 
+    or
+      disablescsi "IOMEGA" "ZIP 100"
+  - Win9x CD: ISO & Joliet does not work yet (read TOC not implemented)
+
+
+Win32 V0.5 (alpha) - 9.May.1999, build 49
+  - option to set rom file name, command "rom <path>". default is "ROM"
+  - option to enable/disable FPU, command "nofpu <true/false>", 
+    default is "true" (disabled)
+    Some ROM's may require that you set this to "false"
+  - uae core streamlined (new vc5opti program). Some performance boost.
+  - fixed a NT cdrom problem 
+  - should work now with original Win95 (before OSR2)
+  - prefs file name may be given as a command line parameter. 
+    defaults is "BasiliskII_prefs".
+  - experimental timer function removed, reverted back to a simple version.
+  - "screen" command expanded to be similar as in other ports.
+    Syntax is now: screen <mode>/<width>/<height>/<bits>
+      <mode> is either "win", "dx" or "fb"
+      <width> and <height> can be either zeroes (uses current screen values),
+      or something else. "win" mode can use almost anything, for other modes
+      there must be a corresponding DirectX mode.
+      <bits> is ignored for mode "win" (uses current screen values)
+      if the mode is "win" and the dimensions are different than the desktop
+      dimensions, windowed mode is used. The window can be moved around by
+      dragging with the right mouse button. This mode remembers window positions 
+      separately for different dimensions
+  - "greenish" 16bit mode screen problem: for "win" mode, should be fixed.
+      For "dx" mode, change the <bits> field of the "screen" command,
+      experiment with values 15 and 16. The default is 15 bits since it's
+      considerably faster. Change to 16 if you need to.
+  - Double-clicking with right mouse button opens a command menu:
+      - About box
+      - Create empty (non-formatted) HFV volume file
+      - Check for floppy
+      - Always on top

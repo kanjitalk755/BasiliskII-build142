@@ -1,0 +1,1 @@
+Please remember to boot your Mac with extensions OFF before attempting to dump the ROM image.

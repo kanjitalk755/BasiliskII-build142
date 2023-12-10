@@ -1,0 +1,30 @@
+enablemapdirect3216 = true;
+
+typedef unsigned short WORD;
+typedef unsigned long  DWORD;
+typedef unsigned char  BYTE, *LPBYTE;
+typedef bool           BOOL;
+
+BOOL ReadCDSectors(BYTE   bDrive,
+									 DWORD  dwStartSector,
+									 WORD   wSectors,
+									 LPBYTE lpBuffer)
+{
+   lpBuffer = inout;
+}
+
+BOOL ReadFloppySectors(BYTE   bDrive,
+											 DWORD  dwStartSector,
+											 WORD   wSectors,
+											 LPBYTE lpBuffer)
+{
+   lpBuffer = inout;
+}
+
+BOOL WriteFloppySectors(BYTE   bDrive,
+											  DWORD  dwStartSector,
+											  WORD   wSectors,
+											  LPBYTE lpBuffer)
+{
+   lpBuffer = inout;
+}

@@ -1,0 +1,14 @@
+DEVICE=B2ETHER
+
+BIN = debug
+
+OBJS=\
+$(BIN)\openclos.obj\
+$(BIN)\packet.obj\
+$(BIN)\request.obj\
+$(BIN)\read.obj\
+$(BIN)\write.obj\
+$(BIN)\lock.obj\
+$(BIN)\ndisdev.obj\
+
+!include ndis.mk

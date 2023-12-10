@@ -1,0 +1,37 @@
+
+#include <version.h>
+#define Not_VxD
+#include <vmm.h>
+
+
+/*-----------------------------------------------*/
+/* the following lines are specific to this file */
+/*-----------------------------------------------*/
+
+/* VER_FILETYPE, VER_FILESUBTYPE, VER_FILEDESCRIPTION_STR
+ * and VER_INTERNALNAME_STR must be defined before including COMMON.VER
+ * The strings don't need a '\0', since common.ver has them.
+ */
+#define	VER_FILETYPE	VFT_VXD
+/* possible values:		VFT_UNKNOWN
+				VFT_APP
+				VFT_DLL
+				VFT_DRV
+				VFT_FONT
+				VFT_VXD
+				VFT_STATIC_LIB
+*/
+
+#define VER_FILESUBTYPE 		UNDEFINED_DEVICE_ID
+
+#define VER_FILEDESCRIPTION_STR   "Basilisk II ethernet driver"
+#define VER_INTERNALNAME_STR      "B2Ether"
+#define VER_LEGALCOPYRIGHT_YEARS  "1999"
+#define VER_LEGALCOPYRIGHT_STR    "Author Lauri Pesonen " VER_LEGALCOPYRIGHT_YEARS
+#define VER_ORIGINALFILENAME_STR  "B2ETHER.Vxd"
+
+// #define VER_PRODUCTNAME_STR "Basilisk II ethernet driver"
+// #define VER_COMPANYNAME_STR "Basilisk II"
+
+#include <common.ver>
+

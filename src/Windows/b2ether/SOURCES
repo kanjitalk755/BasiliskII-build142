@@ -1,0 +1,12 @@
+MAJORCOMP=ntos
+MINORCOMP=cdrtape
+NT_UP=0
+
+TARGETNAME=cdrtape
+TARGETPATH=$(BASEDIR)\lib
+TARGETTYPE=DRIVER
+
+INCLUDES=$(BASEDIR)\inc;$(BASEDIR)\src\storage\inc
+SOURCES=cdrtape.c cdrfile.c cdrcomp.c
+TARGETLIBS=$(BASEDIR)\lib\*\$(DDKBUILDENV)\win32k.lib
+MSC_WARNING_LEVEL=/W3 /WX /FR /FAcs /D$(MYMODE)

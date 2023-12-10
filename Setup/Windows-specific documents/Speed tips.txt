@@ -1,0 +1,94 @@
+How to make Basilisk II run faster
+----------------------------------
+
+First the obvious: if at all possible, consider upgrading your hardware
+if you can afford it. Basilisk II Windows port is optimized for PII and PIII
+class machines.
+
+There are two versions of Basilisk II in the distribution archive.
+The one named BasiliskIINT.exe runs only on NT4 and Win2k, and is
+considerably faster than the old BasiliskII.exe, which is distributed
+only for those who have not yet upgraded to NT based technology.
+Under NT4/Win2k, you are supposed to delete BasiliskII.exe and rename
+BasiliskIINT.exe to be BasiliskII.exe.
+
+L2 cache latency timing is very important (but I don't want to emphasize
+it too much since most people cannot do anything about it).
+Do not overclock if you need to add extra latency cycles. In contrary,
+you may actually get better performance by slightly underclocking,
+if that allows you to reduce latency (not all BIOSes allow you to
+change these values anyway).
+
+You can disable L2 caching of the lowest 64kB of Mac memory in "Misc" page
+of the GUI. This seems to speed up MacOS 8.x.
+
+There are some palette problems in the code. Sometimes palette animation
+seems very slow (windowed screen modes). You can work around this by making
+sure that there are no other applications running at the same time.
+Task switching out of Basilisk II and back again sometimes helps too.
+
+It's generally a very good idea to make sure that there are no other Windows
+applications running in the background anyway. Even innocently looking
+programs, seemingly just sitting idle, can have a big impact on speed
+of Basilisk II. Do not underestimate this tip -- background tasks may
+severely hurt L2 efficiency.
+
+The same goes for NT services. Basilisk II may be much slower to run 
+under NT Server (as opposed to NT Workstation), because a lot more
+services are running on the background.
+
+If you benchmark the Windows port of Basilisk II, please note that
+the results given by applications like SpeedoMeter are not reliable
+if the accurate 60 Hz timer is disabled.
+
+Full screen modes are [usually] faster than windowed modes.
+Some full screen modes (different screen width) are faster than the others,
+depending on your video adapter.
+
+Reducing the color depth improves the speed dramatically.
+Note that the windowed DirectX mode always uses your Windows color depth,
+no matter what you enter in the GUI.
+
+Reducing the screen dimensions helps too.
+
+Reducing the audio settings in MacOS control panel may speed things
+up on low-end computers.
+
+Disabling ethernet speeds up low-end computers. It has less impact
+on faster machines (PII or better).
+
+Booting with extensions disabled (hold the shift key down when you see the happy Mac)
+can make a big difference in speed and responsiveness. Since you cannot boot without
+extensions all the time, you should consider disabling all unnecessary control
+panels and extensions instead. This is even more important under Mac emulation than
+when using a real Mac.
+
+The "Debug" page of the GUI allows you to disable the accurate 60 Hz timer.
+On low end computers, this can speed things up.
+
+There is also an "undocumented" setting that you can define in the file
+"BasiliskII.ini" in your Windows folder:
+
+  [Debug]
+  disable_internal_wait=1
+
+This will boost especially net browsing, but some applications may not work
+(although everything seems to work for me).
+
+Experiment with the "Milliseconds between frames" option in the GUI screen tab.
+Increasing the value slightly may give better performance. Increasing it
+too much will cause jerky mouse and screen updates. The screen refresh frame
+rate is calculated as follows:
+  FPS = 1000 / ("Milliseconds between frames" + "constant")
+where "constant" depends on your hardware, typically a few milliseconds.
+
+Some applications run considerably faster when the FPU is enabled.
+
+Customize the thread priorities in the GUI. They are important. I cannot provide
+a priority setup that is optimal for all hardware configurations, so you are
+on your own here. The basic rule is: the CPU priority should not be higher than
+most of the other values. CPU is the only thread that is running all the time,
+and it should have all the time that is left over from the rest of the threads.
+
+--
+Lauri

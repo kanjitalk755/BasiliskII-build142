@@ -1,0 +1,14 @@
+The files B2WIN32.DLL and B2WIN16.DLL are only needed under
+Win9x to access CD-ROM's using real mode (config.sys) drivers.
+They should be placed into the same folder where the Basilisk II
+executable file is.
+
+Under WinNT and Win2k, these files are not needed.
+
+The dll files are used if:
+  - You are running Windows 95 or 98 (and possibly the upcoming Millennium)
+  - You have real mode CD drivers installed in your config.sys
+  - You have enabled the option "Use Windows 95/98 real mode CD drivers"
+    in the GUI CD-ROM page.
+
+In all other cases the files are not needed and they can be deleted.

@@ -1,0 +1,3411 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\BasiliskIIGUI.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\BasiliskIIGUI.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PAGE_DISK DIALOG DISCARDABLE  0, 0, 217, 225
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Disk"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_DISK_LIST_INSTALLED,7,33,92,75,LBS_OWNERDRAWFIXED | 
+                    LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_HSCROLL | WS_TABSTOP
+    LISTBOX         IDC_DISK_LIST_AVAILABLE,118,33,92,75,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "<<",IDC_DISK_INSTALL,102,55,13,14
+    PUSHBUTTON      ">>",IDC_DISK_REMOVE,102,77,13,14
+    PUSHBUTTON      "&Up",IDC_DISK_UP,19,112,23,14
+    PUSHBUTTON      "&Down",IDC_DISK_DOWN,54,112,23,14
+    PUSHBUTTON      "&Browse ...",IDC_DISK_ADD_VOLUME_FILE,89,112,50,14
+    PUSHBUTTON      "&Create ...",IDC_DISK_CREATE_HFV,148,112,50,14
+    COMBOBOX        IDC_DISK_MOUNT_MODE,7,131,203,66,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_DISK_POLL_MEDIA,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,13,176,8,10
+    LTEXT           "The topmost item on the list has the highest boot priority.",
+                    IDC_STATIC,16,9,194,8
+    LTEXT           "Installed disks:",IDC_STATIC,16,22,69,8
+    LTEXT           "Available disks:",IDC_STATIC,130,22,69,8
+    GROUPBOX        " Enable polling ",IDC_STATIC,7,164,203,53
+    LTEXT           "Try to automatically detect new media except 1.44 MB floppies. Applies to all ""floppy"", ""cd"" or ""disk"" removable media. May cause modest slow down. If unchecked, use Ctrl-Shift-F11 to manually mount the new media.",
+                    IDC_STATIC,24,176,180,37
+    PUSHBUTTON      "Mount mode help ...",IDC_MOUNT_MODE_HELP,64,147,90,13
+END
+
+IDD_PAGE_FLOPPY DIALOGEX 0, 0, 217, 225
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Floppy"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Boot from floppy allowed",IDC_FLOPPY_BOOT_ALLOWED,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,15,119,10
+    LISTBOX         IDC_FLOPPY_LIST_INSTALLED,7,60,92,59,LBS_OWNERDRAWFIXED | 
+                    LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+    LISTBOX         IDC_FLOPPY_LIST_AVAILABLE,118,60,92,59,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "<<",IDC_FLOPPY_INSTALL,102,72,13,14
+    PUSHBUTTON      ">>",IDC_FLOPPY_REMOVE,102,94,13,14
+    PUSHBUTTON      "&Up",IDC_FLOPPY_UP,24,123,23,14
+    PUSHBUTTON      "&Down",IDC_FLOPPY_DOWN,59,123,23,14
+    LTEXT           "The topmost item on the list has the highest boot priority.",
+                    IDC_STATIC,16,32,194,13
+    LTEXT           "Installed floppies:",IDC_STATIC,18,49,74,8
+    LTEXT           "Available floppies:",IDC_STATIC,124,49,77,8
+    LTEXT           "If the list is of ""Installed floppies"" is left empty, no floppies will be available.",
+                    IDC_STATIC,21,179,174,26,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "Select mount mode (read only, read/write)",
+                    IDC_FLOPPY_RW,19,149,179,14
+END
+
+IDD_PAGE_CDROM DIALOGEX 0, 0, 217, 225
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "CD"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "CD-ROM enabled",IDC_CD_ENABLED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,15,91,10
+    LISTBOX         IDC_CD_LIST_INSTALLED,7,60,92,59,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_CD_LIST_AVAILABLE,118,60,92,59,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "<<",IDC_CD_INSTALL,102,72,13,14
+    PUSHBUTTON      ">>",IDC_CD_REMOVE,102,94,13,14
+    PUSHBUTTON      "&Up",IDC_CD_UP,24,123,23,14
+    PUSHBUTTON      "&Down",IDC_CD_DOWN,59,123,23,14
+    LTEXT           "The topmost drive on the list has the highest boot priority.",
+                    IDC_STATIC,16,32,194,13
+    LTEXT           "Installed cd's:",IDC_STATIC,18,49,69,8
+    LTEXT           "Available cd's:",IDC_STATIC,124,49,69,8
+    LTEXT           "If the list of ""Installed cd's"" is left empty, no CD-ROMs will be available, except possible SCSI devices.",
+                    IDC_STATIC,21,150,174,33,0,WS_EX_STATICEDGE
+    CONTROL         "Use Windows 95/98 real mode CD drivers",
+                    IDC_CD_REAL_MODE_CD,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,30,195,160,10
+END
+
+IDD_PAGE_PORTS DIALOG DISCARDABLE  0, 0, 217, 225
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Ports"
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_PORTS_MODEM,66,47,39,143,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_PORTS_FILE0,66,65,135,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_PORTS_PRINTER,66,108,39,134,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_PORTS_FILE1,66,127,135,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Browse...",IDC_PORTS_FILE0_BROWSE,152,46,50,14
+    PUSHBUTTON      "&Browse...",IDC_PORTS_FILE1_BROWSE,152,108,50,14
+    LTEXT           "Modem port:",IDC_STATIC,15,49,48,8
+    LTEXT           "Printer port:",IDC_STATIC,15,110,48,8
+    LTEXT           "File:",IDC_STATIC,15,67,38,8
+    LTEXT           "File:",IDC_STATIC,15,129,38,8
+END
+
+IDD_PAGE_MEMORY DIALOG DISCARDABLE  0, 0, 217, 225
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Memory"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_MEMORY_RAM_SIZE,68,23,28,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MEMORY_ROM_PATH,24,71,174,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Browse...",IDC_MEMORY_ROM_BROWSE,148,55,50,14
+    EDITTEXT        IDC_MEMORY_ROM_TYPE,62,101,137,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_MEMORY_ROM_CHECKSUM,148,117,51,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_MEMORY_ROM_CHECKSUM_CALC,148,133,51,12,
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_MEMORY_INFO,19,173,180,38,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "ROM file path:",IDC_STATIC,24,59,114,8
+    LTEXT           "RAM size:",IDC_STATIC,24,25,40,8
+    LTEXT           "ROM type:",IDC_STATIC,19,103,39,8
+    LTEXT           "ROM checksum (calculated):",IDC_STATIC,19,135,118,8
+    LTEXT           "ROM checksum (from ROM file):",IDC_STATIC,19,119,122,8
+    LTEXT           "megabytes",IDC_STATIC,101,25,51,8
+    LTEXT           "More info:",IDC_STATIC,19,161,59,8
+END
+
+IDD_PAGE_SCREEN DIALOGEX 0, 0, 217, 225
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Screen"
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_SCREEN_TYPE,84,67,110,64,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_SCREEN_WIDTH,84,81,53,94,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_SCREEN_HEIGHT,84,95,53,84,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_SCREEN_BITS,84,109,110,94,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_SCREEN_REFRESH_RATE,84,123,67,94,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_SCREEN_SLEEP_TICKS,136,149,21,12,ES_AUTOHSCROLL
+    CONTROL         "Display real frame rate",IDC_SCREEN_SHOW_FPS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,29,173,107,10
+    CONTROL         "Disable Windows 98 screen optimizations",
+                    IDC_SCREEN_DISABLE_98OPT,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,29,196,175,10
+    LTEXT           "Screen type:",IDC_STATIC,24,69,49,8
+    LTEXT           "Screen width:",IDC_STATIC,24,83,58,8
+    LTEXT           "Screen height:",IDC_STATIC,24,97,58,8
+    LTEXT           "Colors:",IDC_STATIC,24,111,57,8
+    LTEXT           "Milliseconds between frames:",IDC_STATIC,30,151,102,8
+    LTEXT           "Linear frame buffer works under NT only. The windowed Direct X mode supports 15, 16 and 32 bits only and has some known screen update bugs. For full screen modes, Width/Height must be a valid Direct X screen size.",
+                    IDC_STATIC,7,7,203,41,0,WS_EX_STATICEDGE
+    LTEXT           "Refresh rate:",IDC_STATIC,24,125,57,8
+    PUSHBUTTON      "Modes ...",IDC_SCREEN_REFRESH_RATE_HELP,154,123,39,12
+END
+
+IDD_PAGE_SCSI DIALOGEX 0, 0, 217, 225
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "SCSI"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "&SCSI enabled",IDC_SCSI_ENABLED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,7,99,10
+    LISTBOX         IDC_SCSI_LIST_REPLACE_FROM,7,36,99,54,
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_SCSI_LIST_REPLACE_TO,111,36,99,54,
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&Source...",IDC_SCSI_ADD_FROM,9,93,46,14
+    PUSHBUTTON      "R&emove",IDC_SCSI_DEL_FROM,58,93,46,14
+    PUSHBUTTON      "&Target...",IDC_SCSI_ADD_TO,113,93,46,14
+    PUSHBUTTON      "Re&move",IDC_SCSI_DEL_TO,162,93,46,14
+    LISTBOX         IDC_SCSI_LIST_DISABLED,7,131,99,70,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&Add...",IDC_SCSI_ADD_DISABLED,7,204,46,14
+    PUSHBUTTON      "Rem&ove",IDC_SCSI_DEL_DISABLED,56,204,46,14
+    LTEXT           "Replace this...",IDC_STATIC,7,25,89,8
+    LTEXT           "Installed SCSI devices:",IDC_STATIC,7,117,89,8
+    LTEXT           "... by this.",IDC_STATIC,111,25,89,8
+    LTEXT           "The ""Add"" button replaces the selected free SCSI slot, or the first free one if the selected slot is already occupied.",
+                    IDC_STATIC,118,131,92,70,0,WS_EX_STATICEDGE
+END
+
+IDD_PAGE_GENERAL DIALOGEX 0, 0, 217, 225
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "General"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_GENERAL_BOOT_DRIVE,68,17,21,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_GENERAL_BOOT_DRIVER,68,41,135,85,CBS_DROPDOWN | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_GENERAL_MODEL_ID,68,64,135,117,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "68881 or 68040 &FPU emulation enabled",
+                    IDC_GENERAL_FPU_ENABLED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,16,135,168,10
+    COMBOBOX        IDC_CPU,68,110,48,71,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_GENERAL_PREFS_PATH,14,181,188,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Register ""BII"" file type ...",
+                    IDC_GENERAL_PREFS_ASSOCIATE,15,197,94,14
+    PUSHBUTTON      "Save As ...",IDC_GENERAL_PREFS_BROWSE,146,197,55,14
+    LTEXT           "Boot drive:",IDC_STATIC,16,20,43,8
+    LTEXT           "Boot driver:",IDC_STATIC,16,43,43,8
+    LTEXT           "Model ID:",IDC_STATIC,16,66,43,8
+    LTEXT           "Model is compatible with MacOS 8:",IDC_STATIC,16,89,129,
+                    8
+    LTEXT           "Not known",IDC_GENERAL_OS8_OK,149,87,39,11,0,
+                    WS_EX_CLIENTEDGE
+    LTEXT           "CPU:",IDC_STATIC,16,112,50,8
+    LTEXT           "Preference file name:",IDC_STATIC,15,170,88,8
+END
+
+IDD_KEYBOARD DIALOGEX 0, 0, 305, 131
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Keyboard codes"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,258,93,40,14
+    PUSHBUTTON      "Cancel",IDCANCEL,258,110,40,14
+    PUSHBUTTON      "§",IDC_K_SECTION,7,25,15,11
+    PUSHBUTTON      "1",IDC_K_1,23,25,11,11
+    PUSHBUTTON      "2",IDC_K_2,35,25,11,11
+    PUSHBUTTON      "3",IDC_K_3,47,25,11,11
+    PUSHBUTTON      "4",IDC_K_4,59,25,11,11
+    PUSHBUTTON      "5",IDC_K_5,71,25,11,11
+    PUSHBUTTON      "6",IDC_K_6,83,25,11,11
+    PUSHBUTTON      "7",IDC_K_7,95,25,11,11
+    PUSHBUTTON      "8",IDC_K_8,107,25,11,11
+    PUSHBUTTON      "9",IDC_K_9,119,25,11,11
+    PUSHBUTTON      "0",IDC_K_0,131,25,11,11
+    PUSHBUTTON      "+",IDC_K_PLUS,143,25,11,11
+    PUSHBUTTON      "´",IDC_K_ACUTE,155,25,11,11
+    PUSHBUTTON      "",IDC_K_BACKSPACE,167,25,18,11
+    PUSHBUTTON      "Q",IDC_K_Q,29,37,11,11
+    PUSHBUTTON      "W",IDC_K_W,41,37,11,11
+    PUSHBUTTON      "E",IDC_K_E,53,37,11,11
+    PUSHBUTTON      "R",IDC_K_R,65,37,11,11
+    PUSHBUTTON      "T",IDC_K_T,77,37,11,11
+    PUSHBUTTON      "Y",IDC_K_Y,89,37,11,11
+    PUSHBUTTON      "U",IDC_K_U,101,37,11,11
+    PUSHBUTTON      "I",IDC_K_I,113,37,11,11
+    PUSHBUTTON      "O",IDC_K_O,125,37,11,11
+    PUSHBUTTON      "P",IDC_K_P,137,37,11,11
+    PUSHBUTTON      "Å",IDC_K_RUOTS_O,149,37,11,11
+    PUSHBUTTON      "¨",IDC_K_DOTDOT,161,37,11,11
+    PUSHBUTTON      "Tab",IDC_K_TAB,7,37,21,11
+    PUSHBUTTON      "A",IDC_K_A,31,49,11,11
+    PUSHBUTTON      "S",IDC_K_S,43,49,11,11
+    PUSHBUTTON      "D",IDC_K_D,55,49,11,11
+    PUSHBUTTON      "F",IDC_K_F,67,49,11,11
+    PUSHBUTTON      "G",IDC_K_G,79,49,11,11
+    PUSHBUTTON      "H",IDC_K_H,91,49,11,11
+    PUSHBUTTON      "J",IDC_K_J,103,49,11,11
+    PUSHBUTTON      "K",IDC_K_K,115,49,11,11
+    PUSHBUTTON      "L",IDC_K_L,127,49,11,11
+    PUSHBUTTON      "Ö",IDC_K_OO,139,49,11,11
+    PUSHBUTTON      "Ä",IDC_K_AA,151,49,11,11
+    PUSHBUTTON      "'",IDC_K_QUOTE,163,49,11,11
+    PUSHBUTTON      "",IDC_K_RET,175,37,10,23
+    PUSHBUTTON      "Caps",IDC_K_CAPSLOCK,7,49,23,11
+    PUSHBUTTON      "<",IDC_K_LESSTHAN,25,61,11,11
+    PUSHBUTTON      "Z",IDC_K_Z,37,61,11,11
+    PUSHBUTTON      "X",IDC_K_X,49,61,11,11
+    PUSHBUTTON      "C",IDC_K_C,61,61,11,11
+    PUSHBUTTON      "V",IDC_K_V,73,61,11,11
+    PUSHBUTTON      "B",IDC_K_B,85,61,11,11
+    PUSHBUTTON      "N",IDC_K_N,97,61,11,11
+    PUSHBUTTON      "M",IDC_K_M,109,61,11,11
+    PUSHBUTTON      ",",IDC_K_COMMA,121,61,11,11
+    PUSHBUTTON      ".",IDC_K_PERIOD,133,61,11,11
+    PUSHBUTTON      "-",IDC_K_HYPHEN,145,61,11,11
+    PUSHBUTTON      "",IDC_K_RSHIFT,157,61,28,11
+    PUSHBUTTON      "",IDC_K_LSHIFT,7,61,17,11
+    PUSHBUTTON      "",IDC_K_LCONTROL,7,73,17,11
+    PUSHBUTTON      "",IDC_K_LWIN,25,73,15,11
+    PUSHBUTTON      "",IDC_K_LALT,41,73,17,11
+    PUSHBUTTON      "",IDC_K_ALTGR,134,73,17,11
+    PUSHBUTTON      "",IDC_K_RWIN,152,73,15,11
+    PUSHBUTTON      "",IDC_K_RCONTROL,168,73,17,11
+    PUSHBUTTON      "",IDC_K_SPACE,59,73,74,11
+    PUSHBUTTON      "",IDC_K_ESC,7,7,11,11
+    PUSHBUTTON      "",IDC_K_F1,25,7,11,11
+    PUSHBUTTON      "",IDC_K_F2,37,7,11,11
+    PUSHBUTTON      "",IDC_K_F3,49,7,11,11
+    PUSHBUTTON      "",IDC_K_F4,61,7,11,11
+    PUSHBUTTON      "",IDC_K_F5,81,7,11,11
+    PUSHBUTTON      "",IDC_K_F6,93,7,11,11
+    PUSHBUTTON      "",IDC_K_F7,105,7,11,11
+    PUSHBUTTON      "",IDC_K_F8,117,7,11,11
+    PUSHBUTTON      "",IDC_K_F9,136,7,11,11
+    PUSHBUTTON      "",IDC_K_F10,148,7,11,11
+    PUSHBUTTON      "",IDC_K_F11,160,7,11,11
+    PUSHBUTTON      "",IDC_K_F12,172,7,11,11
+    PUSHBUTTON      "",IDC_K_PRINTSCREEN,201,7,11,11
+    PUSHBUTTON      "",IDC_K_SCROLL_LOCK,213,7,11,11
+    PUSHBUTTON      "",IDC_K_PAUSE,225,7,11,11
+    PUSHBUTTON      "",IDC_K_INSERT,201,25,11,11
+    PUSHBUTTON      "",IDC_K_HOME,213,25,11,11
+    PUSHBUTTON      "",IDC_K_PAGE_UP,225,25,11,11
+    PUSHBUTTON      "",IDC_K_DELETE,201,37,11,11
+    PUSHBUTTON      "",IDC_K_END,213,37,11,11
+    PUSHBUTTON      "",IDC_K_PAGE_DOWN,225,37,11,11
+    PUSHBUTTON      "",IDC_K_LEFT,201,73,11,11
+    PUSHBUTTON      "",IDC_K_DOWN,213,73,11,11
+    PUSHBUTTON      "",IDC_K_RIGHT,225,73,11,11
+    PUSHBUTTON      "",IDC_K_UP,213,61,11,11
+    PUSHBUTTON      "Nu",IDC_K_NUMLOCK,251,25,11,11
+    PUSHBUTTON      "/",IDC_K_NUMPAD_DIVIDE,263,25,11,11
+    PUSHBUTTON      "*",IDC_K_NUMPAD_MULTIPLE,275,25,11,11
+    PUSHBUTTON      "-",IDC_K_NUMPAD_MINUS,287,25,11,11
+    PUSHBUTTON      "7",IDC_K_NUMPAD_7,251,37,11,11
+    PUSHBUTTON      "8",IDC_K_NUMPAD_8,263,37,11,11
+    PUSHBUTTON      "9",IDC_K_NUMPAD_9,275,37,11,11
+    PUSHBUTTON      "+",IDC_K_NUMPAD_PLUS,287,37,11,23
+    PUSHBUTTON      "4",IDC_K_NUMPAD_4,251,49,11,11
+    PUSHBUTTON      "5",IDC_K_NUMPAD_5,263,49,11,11
+    PUSHBUTTON      "6",IDC_K_NUMPAD_6,275,49,11,11
+    PUSHBUTTON      "1",IDC_K_NUMPAD_1,251,61,11,11
+    PUSHBUTTON      "2",IDC_K_NUMPAD_2,263,61,11,11
+    PUSHBUTTON      "3",IDC_K_NUMPAD_3,275,61,11,11
+    PUSHBUTTON      ",",IDC_K_NUMPAD_COMMA,275,73,11,11
+    PUSHBUTTON      "0",IDC_K_NUMPAD_0,251,73,23,11
+    PUSHBUTTON      "E",IDC_K_NUMPAD_ENTER,287,61,11,23
+    LTEXT           "Click the key you want to modify. Then select the desired Mac keyboard code from the list.",
+                    IDC_STATIC,7,92,103,32,0,WS_EX_STATICEDGE
+    COMBOBOX        IDC_K_LIST,156,111,97,186,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_K_FRIENDLY_NAME,156,93,97,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "Windows:",IDC_STATIC,116,94,37,8
+    LTEXT           "MacOS:",IDC_STATIC,116,112,37,8
+END
+
+IDD_PAGE_KEYBOARD DIALOG DISCARDABLE  0, 0, 217, 225
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Keyboard"
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_KEYBOARD_TYPE,20,23,174,211,CBS_DROPDOWN | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_KEYBOARD_MAP_FILE_PATH,20,69,174,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Browse...",IDC_KEYBOARD_MAP_BROWSE,144,51,50,14
+    PUSHBUTTON      "&Edit keyboard codes...",IDC_KEYBOARD_EDIT_CODES,63,92,
+                    91,14
+    CONTROL         "Use Alt-enter to switch windowed/full screen",
+                    IDC_KEYBOARD_USE_ALT_ENTER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,23,123,159,10
+    CONTROL         "Reserve Alt-escape for MacOS (NT only)",
+                    IDC_KEYBOARD_USE_ALT_ESCAPE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,23,148,159,10
+    CONTROL         "Reserve Control-escape for MacOS (NT only)",
+                    IDC_KEYBOARD_USE_CONTROL_ESCAPE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,23,163,176,10
+    CONTROL         "Reserve Alt-tab for MacOS (NT only)",
+                    IDC_KEYBOARD_USE_ALT_TAB,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,23,178,159,10
+    CONTROL         "Reserve Alt-space for MacOS (NT only)",
+                    IDC_KEYBOARD_USE_ALT_SPACE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,23,193,159,10
+    LTEXT           "Keyboard type:",IDC_STATIC,21,12,54,8
+    LTEXT           "Custom keyboard file:",IDC_STATIC,21,56,118,8
+END
+
+IDD_PAGE_TOOLS DIALOGEX 0, 0, 217, 225
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Misc"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Always &Topmost window",IDC_TOOLS_IS_ON_TOP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,28,12,133,10
+    CONTROL         "Disable low memory caching (may speed up OS8)",
+                    IDC_EXPERIMENT_LOWMEM_CACHE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,28,28,175,10
+    CONTROL         "Disable screen saver while B2 is running",
+                    IDC_TOOLS_DISABLE_SCREENSAVER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,28,44,176,10
+    COMBOBOX        IDC_TOOLS_GUI_AUTORESTART,28,63,157,73,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Start in low power mode",IDC_TOOLS_SLEEP_ENABLED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,40,97,90,10
+    EDITTEXT        IDC_TOOLS_IDLE_SLEEP,120,113,17,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_TOOLS_IDLE_MINUTES,35,198,17,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    GROUPBOX        " Low power mode ",IDC_STATIC,18,81,181,137
+    LTEXT           "Milliseconds to sleep:",IDC_STATIC,40,115,76,8
+    LTEXT           "Use this option to slow down Basilisk II on laptops, thus allowing the system idle thread to stop the CPU for short periods of time. A value greater than 10 will likely hang the emulation. Can be enabled/disabled in B2 system menu.",
+                    IDC_STATIC,26,132,166,46,0,WS_EX_STATICEDGE
+    LTEXT           "Automatically switch to low power mode after",
+                    IDC_STATIC,37,187,150,8
+    LTEXT           "minute(s) of mouse and keyboard inactivity.",IDC_STATIC,
+                    55,199,140,8
+END
+
+IDD_PAGE_ABOUT DIALOGEX 0, 0, 217, 225
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Info"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CTEXT           "\n A free, portable Mac II emulator\n\n Copyright © 1997-2000 Christian Bauer et al.\n\n UAE CPU core Copyright © Bernd Schmidt\n\n Windows code Copyright © Lauri Pesonen\n\n Freely distributable.",
+                    IDC_STATIC,20,49,177,102,0,WS_EX_STATICEDGE
+    ICON            IDR_MAINFRAME,IDC_STATIC,15,16,20,20
+    LTEXT           "Basilisk II for Windows NT v0.8 [build 142]",IDC_STATIC,
+                    46,20,156,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,15,42,
+                    187,1
+    CTEXT           "\nChanges in preferences take effect after\nBasilisk II is restarted.",
+                    IDC_STATIC,20,171,177,35,0,WS_EX_STATICEDGE
+END
+
+IDD_PAGE_ETHERNET DIALOG DISCARDABLE  0, 0, 217, 225
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Ethernet"
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_ETHERNET_MAC,20,27,181,63,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_ETHERNET_FAKE_ADDRESS,20,109,84,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_ETHERNET_MODE,20,150,150,63,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_ETHERNET_PERMANENT,20,191,150,63,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_ETHERNET_HARDWARE_ADDRESS,20,67,74,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "Network card NDIS driver:",IDC_STATIC,20,15,87,8
+    LTEXT           "Multicast packets:",IDC_STATIC,20,139,119,8
+    LTEXT           "Identifying self:",IDC_STATIC,20,180,119,8
+    LTEXT           "Hardware address:",IDC_STATIC,20,56,70,8
+    LTEXT           "Optional ""fake"" hardware address (12 digits, no spaces)",
+                    IDC_STATIC,20,98,181,8
+END
+
+IDD_NEW_HFV DIALOG DISCARDABLE  0, 0, 237, 175
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Make a new volume file"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_MAKEHFV_NAME,47,58,119,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Browse...",IDC_MAKEHFV_BROWSE,116,74,50,14
+    EDITTEXT        IDC_MAKEHFV_SIZE,89,147,24,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,180,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,180,24,50,14
+    LTEXT           "Path:",IDC_STATIC,21,60,24,8
+    LTEXT           "Size in megabytes:",IDC_STATIC,18,149,68,8
+    LTEXT           "You can enter the full path to the file (example: c:\\basiliskII\\Test.hfv), or just the file title (example: Test.HFV).",
+                    IDC_STATIC,21,24,128,31
+    LTEXT           "Make sure that you have enough free space on the drive where you create the new file.",
+                    IDC_STATIC,18,122,142,22
+    GROUPBOX        " Size ",IDC_STATIC,7,104,166,64
+    GROUPBOX        " Name and location ",IDC_STATIC,7,7,166,91
+END
+
+IDD_ASK_SCSI_REPLACEMENT DIALOG DISCARDABLE  0, 0, 187, 93
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "SCSI replacement"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_SCSIREPL_VENDOR,16,26,48,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SCSIREPL_PRODUCT,16,63,82,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,130,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,130,24,50,14
+    LTEXT           "Vendor name:",IDC_STATIC,16,16,65,8
+    LTEXT           "Product name:",IDC_STATIC,16,53,65,8
+END
+
+IDD_PAGE_PRIORITIES DIALOGEX 0, 0, 217, 225
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Priorities"
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_PRI_ETHERNET_RUN,65,62,65,145,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PRI_ETHERNET_IDLE,145,62,65,144,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PRI_SERIAL_IN_RUN,65,75,65,145,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PRI_SERIAL_IN_IDLE,145,75,65,144,CBS_DROPDOWNLIST | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PRI_SERIAL_OUT_RUN,65,88,65,145,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PRI_SERIAL_OUT_IDLE,145,88,65,144,CBS_DROPDOWNLIST | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PRI_CPU_RUN,65,101,65,145,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PRI_CPU_IDLE,145,101,65,144,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PRI_60HZ_RUN,65,114,65,145,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PRI_60HZ_IDLE,145,114,65,144,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PRI_1HZ_RUN,65,127,65,145,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PRI_1HZ_IDLE,145,127,65,144,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PRI_PRAM_RUN,65,140,65,145,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PRI_PRAM_IDLE,145,140,65,144,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PRI_MOUSE_RUN,65,153,65,145,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PRI_MOUSE_IDLE,145,153,65,144,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PRI_GDI_RUN,65,166,65,145,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PRI_GDI_IDLE,145,166,65,144,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PRI_DX_RUN,65,179,65,145,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PRI_DX_IDLE,145,179,65,144,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PRI_LFB_RUN,65,192,65,145,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PRI_LFB_IDLE,145,192,65,144,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PRI_SOUND_STREAM_RUN,65,205,65,145,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PRI_SOUND_STREAM_IDLE,145,205,65,144,
+                    CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&Defaults",IDC_PRI_DEFAULTS,7,42,46,12
+    LTEXT           "Ethernet",IDC_STATIC,7,64,51,8
+    LTEXT           "Serial port In",IDC_STATIC,7,77,50,8
+    LTEXT           "Serial port out",IDC_STATIC,7,90,52,8
+    LTEXT           "CPU",IDC_STATIC,7,103,52,8
+    LTEXT           "60 Hz && mouse",IDC_STATIC,7,116,51,8
+    LTEXT           "1 Hz",IDC_STATIC,7,129,52,8
+    LTEXT           "Param. RAM",IDC_STATIC,7,142,52,8
+    LTEXT           "GUI",IDC_STATIC,7,155,50,8
+    LTEXT           "GDI",IDC_STATIC,7,168,51,8
+    LTEXT           "Direct X",IDC_STATIC,7,181,49,8
+    LTEXT           "Frame buffer",IDC_STATIC,7,194,52,8
+    LTEXT           "By adjusting the priorities of the basic system threads, you can boost the responsiveness of the components that may not be optimal for you. The values need to be carefully balanced.",
+                    IDC_STATIC,7,7,203,31,0,WS_EX_STATICEDGE
+    LTEXT           "Basilisk II active",IDC_STATIC,65,44,62,8
+    LTEXT           "Basilisk II inactive",IDC_STATIC,145,44,65,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,61,58,149,1,
+                    WS_EX_STATICEDGE
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,137,64,1,152,
+                    WS_EX_STATICEDGE
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,60,64,1,152,
+                    WS_EX_STATICEDGE
+    LTEXT           "Sound stream",IDC_STATIC,7,207,52,8
+END
+
+IDD_PAGE_AUDIO DIALOGEX 0, 0, 217, 225
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Audio"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "&Enable the audio component",IDC_AUDIO_ENABLED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,31,56,119,10
+    CONTROL         "&Disable audio when Basilisk II is inactive",
+                    IDC_AUDIO_SWITCHOUT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,31,68,169,10
+    CONTROL         "&Get hardware volume (alert beeps)",IDC_AUDIO_MYST,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,31,80,173,10
+    CONTROL         "&Enable startup sound (some 1MB ROMs)",
+                    IDC_AUDIO_STARTUP_SOUND,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,31,92,164,10
+    EDITTEXT        IDC_AUDIO_BUFFER_COUNT,19,176,22,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_AUDIO_BUFFER_SIZE_8000,149,159,31,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_AUDIO_BUFFER_SIZE_11025,149,172,31,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_AUDIO_BUFFER_SIZE_22050,149,185,31,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_AUDIO_BUFFER_SIZE_44100,149,198,31,12,ES_AUTOHSCROLL
+    LTEXT           "Audio settings are defined in the MacOS Sound control panel. Some of these settings are saved in BasiliskII.ini file in your Windows directory. Volume control settings are not saved anywhere but the changes are applied to your current Windows settings.",
+                    IDC_STATIC,7,7,203,41,0,WS_EX_STATICEDGE
+    LTEXT           "Number of buffers:",IDC_STATIC,19,163,68,8
+    LTEXT           "Increasing the values below reduces jerkiness but causes more delay. Use the smallest values that don't cause breaks in the sound. The buffer sizes should be multiples of 1024.",
+                    IDC_STATIC,7,110,203,30,0,WS_EX_STATICEDGE
+    LTEXT           "8000 Hz:",IDC_STATIC,110,161,36,8
+    LTEXT           "11025 Hz:",IDC_STATIC,110,174,36,8
+    LTEXT           "22050 Hz:",IDC_STATIC,110,187,36,8
+    LTEXT           "44100 Hz:",IDC_STATIC,110,200,36,8
+    GROUPBOX        " Buffer sizes ",IDC_STATIC,101,148,96,68
+END
+
+IDD_PAGE_DEBUG DIALOGEX 0, 0, 217, 225
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Debug"
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_DEBUG_SCSI_LOG_LEVEL,32,100,152,112,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_DEBUG_SERIAL_LOG_LEVEL,32,123,152,112,
+                    CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_DEBUG_FILESYS_LOG_LEVEL,32,146,152,112,
+                    CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Disable accurate 60 Hz timer",
+                    IDC_DEBUG_DISABLE_ACCURATE_TIMER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,45,178,131,10
+    LTEXT           "The options on this page are for debugging purposes. They should be turned ON only when advised by the developers that can decipher the log files.\n\nNormally keep the three logging options OFF. Failing to do so will substantially degrade the performance.",
+                    IDC_STATIC,7,7,203,58,0,WS_EX_STATICEDGE
+END
+
+IDD_DASD_CONFIRM DIALOG DISCARDABLE  0, 0, 229, 124
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Confirm mounting of SCSI hard disk"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Yes, I'm sure.",IDOK,167,7,55,14
+    DEFPUSHBUTTON   "Cancel",IDCANCEL,167,24,55,14
+    EDITTEXT        IDC_DASD_NAME,24,19,105,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "You are mounting a SCSI (or emulated IDE) hard disk. You should only do this if you know exactly what you are doing. YOU SHOULD NEVER MOUNT A SCSI HARD DISK THAT IS ACCESSIBLE IN WINDOWS.\r\n\r\nAre you SURE you want to mount this device?",
+                    IDC_STATIC,18,51,191,66
+END
+
+IDD_RW_CONFIRM DIALOGEX 0, 0, 248, 254
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Confirm mounting the volume READ/WRITE"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Yes, I'm sure.",IDOK,186,7,55,14
+    DEFPUSHBUTTON   "Cancel",IDCANCEL,186,24,55,14
+    EDITTEXT        IDC_PATH_TO_MOUNT,24,19,105,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "You are mounting a hard disk partition or an entire hard disk as READ/WRITE. You should ONLY do this if you know exactly what you are doing.",
+                    IDC_STATIC,17,72,211,29
+    CTEXT           "PLEASE READ THIS CAREFULLY.",IDC_STATIC,20,45,208,17,
+                    SS_CENTERIMAGE,WS_EX_DLGMODALFRAME
+    CTEXT           "Are you SURE you want to mount this device READ/WRITE?",
+                    IDC_STATIC,7,234,234,12
+    LTEXT           "If you don't know what the risks and the work arounds are, you DON'T want to do this. PC Exchange bugs may corrupt your data.",
+                    IDC_STATIC,17,105,212,25
+    LTEXT           "Especially the PC Exchange version that ships with MacOS versions 7.5.x is known to corrupt partitions. The version included in MacOS 8.1 is better, but nothing is guaranteed.",
+                    IDC_STATIC,17,133,212,28
+    LTEXT           "Never mount a partition which contains valuable data. Consider creating one small partition for file transfer purposes, the smaller the better.",
+                    IDC_STATIC,17,170,212,27
+    LTEXT           "If you don't have PC Exchange enabled, the MacOS will ask you whether to initialize the volume. Make sure to answer no, or your data is destroyed.",
+                    IDC_STATIC,17,200,212,28
+END
+
+IDD_PAGE_MOUSE DIALOG DISCARDABLE  0, 0, 217, 225
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Mouse"
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_MOUSE_RIGHT_MOUSE,25,22,125,66,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Sticky menu bar (OS8 style mouse clicks)",
+                    IDC_MOUSE_STICKY_MENU,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,25,41,162,10
+    COMBOBOX        IDC_MOUSE_MOVEMENT,25,56,145,66,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_MOUSE_MOUSEWHEEL,31,90,89,66,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_MOUSE_MOUSELINES,136,90,19,12,ES_AUTOHSCROLL
+    CONTROL         "Reverse x direction",IDC_MOUSE_MOUSEWHEEL_REVERSE_X,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,39,109,87,10
+    CONTROL         "Reverse y direction",IDC_MOUSE_MOUSEWHEEL_REVERSE_Y,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,39,122,87,10
+    COMBOBOX        IDC_MOUSE_MOUSEWHEEL_CLICK_MODE,32,137,155,59,
+                    CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_MOUSE_MOUSEWHEEL_CUST_00,77,154,108,12,
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_MOUSE_MOUSEWHEEL_CUST_01,77,167,108,12,
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_MOUSE_MOUSEWHEEL_CUST_10,77,180,108,12,
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_MOUSE_MOUSEWHEEL_CUST_11,77,193,108,12,
+                    ES_AUTOHSCROLL
+    LTEXT           "Right mouse button is used to:",IDC_STATIC,25,11,113,8
+    LTEXT           "lines.",IDC_MOUSE_MOUSEWHEEL_STATIC2,158,92,24,8
+    LTEXT           ",",IDC_MOUSE_MOUSEWHEEL_STATIC1,125,92,8,8
+    GROUPBOX        " Mouse wheel ",IDC_STATIC,18,75,180,136
+    LTEXT           "Normal:",IDC_MOUSE_MOUSEWHEEL_STATIC3,33,156,42,8
+    LTEXT           "Shift:",IDC_MOUSE_MOUSEWHEEL_STATIC4,33,169,42,8
+    LTEXT           "Cntrl:",IDC_MOUSE_MOUSEWHEEL_STATIC5,33,182,42,8
+    LTEXT           "Shift+Cntrl:",IDC_MOUSE_MOUSEWHEEL_STATIC6,33,195,42,8
+END
+
+IDD_PAGE_EXPERIMENT DIALOGEX 0, 0, 217, 225
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Experiment"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "The options on this page are used to enable experimental features. Some of them may cause your Mac to run more slowly, some will make things faster. Feel free to play with them, they are always safe to try.",
+                    IDC_STATIC,19,19,180,46,0,WS_EX_STATICEDGE
+    LTEXT           "If you think that some of the features should be included in Basilisk II, please let me know. Features that don't stir any comments will be automatically removed.",
+                    IDC_STATIC,19,70,180,39,0,WS_EX_STATICEDGE
+END
+
+IDD_PAGE_DR DIALOGEX 0, 0, 217, 225
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "DR"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CTEXT           "This build seems to have DR technology disabled.",-1,19,
+                    19,180,19,SS_CENTERIMAGE,WS_EX_STATICEDGE
+    CONTROL         "Dump code blocks",IDC_DR_DUMP,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,55,54,123,10
+    CONTROL         "Disassemble 68k code",IDC_DR_DIS68K,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,55,68,123,10
+    CONTROL         "Compile only, do not run",IDC_DR_COMPILEONLY,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,55,82,118,10
+    CONTROL         "Break at every code block",IDC_DR_BREAK,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,55,96,125,10
+    CONTROL         "Make tags",IDC_DR_MAKETAGS,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,55,110,119,10
+END
+
+IDD_PAGE_EXTFS DIALOGEX 0, 0, 217, 225
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "My Computer"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Enable external file system",IDC_EXTFS_ENABLED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,32,40,135,10
+    CONTROL         "&A:",IDC_EXTFS_A,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    50,73,22,10
+    CONTROL         "&B:",IDC_EXTFS_B,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    50,84,22,10
+    CONTROL         "&C:",IDC_EXTFS_C,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    50,95,22,10
+    CONTROL         "&D:",IDC_EXTFS_D,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    50,106,23,10
+    CONTROL         "&E:",IDC_EXTFS_E,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    50,117,22,10
+    CONTROL         "&F:",IDC_EXTFS_F,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    50,128,22,10
+    CONTROL         "&G:",IDC_EXTFS_G,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    50,139,23,10
+    CONTROL         "&H:",IDC_EXTFS_H,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    50,150,23,10
+    CONTROL         "&I:",IDC_EXTFS_I,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    50,161,19,10
+    CONTROL         "&J:",IDC_EXTFS_J,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    87,73,21,10
+    CONTROL         "&K:",IDC_EXTFS_K,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    87,84,22,10
+    CONTROL         "&L:",IDC_EXTFS_L,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    87,95,21,10
+    CONTROL         "&M:",IDC_EXTFS_M,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    87,106,23,10
+    CONTROL         "&N:",IDC_EXTFS_N,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    87,117,23,10
+    CONTROL         "&O:",IDC_EXTFS_O,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    87,128,23,10
+    CONTROL         "&P:",IDC_EXTFS_P,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    87,139,22,10
+    CONTROL         "&Q:",IDC_EXTFS_Q,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    87,150,23,10
+    CONTROL         "&R:",IDC_EXTFS_R,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    87,161,23,10
+    CONTROL         "&S:",IDC_EXTFS_S,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    124,73,22,10
+    CONTROL         "&T:",IDC_EXTFS_T,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    124,84,22,10
+    CONTROL         "&U:",IDC_EXTFS_U,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    124,95,23,10
+    CONTROL         "&V:",IDC_EXTFS_V,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    124,106,22,10
+    CONTROL         "&W:",IDC_EXTFS_W,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    124,117,24,10
+    CONTROL         "&X:",IDC_EXTFS_X,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    124,128,22,10
+    CONTROL         "&Y:",IDC_EXTFS_Y,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    124,139,22,10
+    CONTROL         "&Z:",IDC_EXTFS_Z,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    124,150,22,10
+    PUSHBUTTON      "All",IDC_EXTFS_ALL,157,146,26,10
+    PUSHBUTTON      "None",IDC_EXTFS_NONE,157,162,26,10
+    PUSHBUTTON      "File type mappings",IDC_EXTFS_TYPES,30,186,156,14
+    GROUPBOX        " Mount drives: ",IDC_STATIC,25,57,167,123
+    LTEXT           "When enabled, installs a ""My Computer"" icon on your Mac desktop, allowing you to access data on your Windows drives. UNC paths are not yet supported.",
+                    IDC_STATIC,7,7,203,29,0,WS_EX_STATICEDGE
+    EDITTEXT        IDC_EXTFS_PATH,25,205,143,12,ES_AUTOHSCROLL
+    PUSHBUTTON      ">>",IDC_EXTFS_BROWSE_PATH,172,205,20,12
+END
+
+IDD_FILETYPE_MAPPINGS DIALOGEX 0, 0, 278, 190
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "File type mappings"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LISTBOX         IDC_FILETYPE_LIST,7,39,199,101,LBS_SORT | 
+                    LBS_USETABSTOPS | LBS_NOINTEGRALHEIGHT | LBS_EXTENDEDSEL | 
+                    WS_VSCROLL,WS_EX_DLGMODALFRAME
+    EDITTEXT        IDC_FILETYPE_COMMENT,7,143,199,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FILETYPE_DOS,9,170,24,13,ES_UPPERCASE | 
+                    ES_AUTOHSCROLL
+    CONTROL         "Strip",IDC_FILETYPE_STRIP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,38,171,26,10
+    EDITTEXT        IDC_FILETYPE_TYPE,70,170,30,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FILETYPE_CREATOR,106,170,30,13,ES_AUTOHSCROLL
+    CONTROL         "HFS -> DO&S",IDC_FILETYPE_HFS2FAT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,146,160,58,10
+    CONTROL         "DOS -> &HFS",IDC_FILETYPE_FAT2HFS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,146,173,55,10
+    DEFPUSHBUTTON   "OK",IDOK,213,7,58,14
+    PUSHBUTTON      "Cancel",IDCANCEL,213,23,58,14
+    PUSHBUTTON      "&Import...",IDC_FILETYPE_IMPORT,213,46,58,14
+    PUSHBUTTON      "Export &selected...",IDC_FILETYPE_EXPORT_SELECTED,213,
+                    62,58,14
+    PUSHBUTTON      "E&xport All...",IDC_FILETYPE_EXPORT,213,78,58,14
+    PUSHBUTTON      "Select N&one",IDC_FILETYPE_SELECT_ALL2,213,99,58,14
+    PUSHBUTTON      "Select &All",IDC_FILETYPE_SELECT_ALL,213,115,58,14
+    PUSHBUTTON      "Du&plicate",IDC_FILETYPE_DUPLICATE,213,137,58,14
+    PUSHBUTTON      "&New",IDC_FILETYPE_NEW,213,153,58,14
+    PUSHBUTTON      "&Delete",IDC_FILETYPE_DELETE,213,169,58,14
+    LTEXT           "DOS extension:",IDC_STATIC,9,159,57,8
+    LTEXT           "Type:",IDC_STATIC,70,159,31,8
+    LTEXT           "Creator:",IDC_STATIC,106,159,34,8
+    LTEXT           "DOS extension:",IDC_STATIC,9,29,56,8
+    LTEXT           "Type:",IDC_STATIC,70,29,31,8
+    LTEXT           "Creator:",IDC_STATIC,106,29,31,8
+    LTEXT           "->DOS",IDC_STATIC,141,29,26,8
+    LTEXT           "->HFS",IDC_STATIC,171,29,26,8
+    PUSHBUTTON      "Help",IDC_FILETYPE_HELP,146,7,58,14
+    LTEXT           "",IDC_FILETYPE_CONFLICT,41,14,71,8
+END
+
+IDD_KEYBOARD_BACKUP DIALOGEX 0, 0, 333, 132
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Keyboard codes"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,276,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,276,24,50,14
+    PUSHBUTTON      "§",IDC_K_SECTION,7,25,15,11
+    PUSHBUTTON      "1",IDC_K_1,22,25,11,11
+    PUSHBUTTON      "2",IDC_K_2,33,25,11,11
+    PUSHBUTTON      "3",IDC_K_3,44,25,11,11
+    PUSHBUTTON      "4",IDC_K_4,55,25,11,11
+    PUSHBUTTON      "5",IDC_K_5,66,25,11,11
+    PUSHBUTTON      "6",IDC_K_6,77,25,11,11
+    PUSHBUTTON      "7",IDC_K_7,88,25,11,11
+    PUSHBUTTON      "8",IDC_K_8,99,25,11,11
+    PUSHBUTTON      "9",IDC_K_9,110,25,11,11
+    PUSHBUTTON      "0",IDC_K_0,121,25,11,11
+    PUSHBUTTON      "+",IDC_K_PLUS,132,25,11,11
+    PUSHBUTTON      "´",IDC_K_ACUTE,143,25,11,11
+    PUSHBUTTON      "",IDC_K_BACKSPACE,154,25,18,11
+    PUSHBUTTON      "Q",IDC_K_Q,28,36,11,11
+    PUSHBUTTON      "W",IDC_K_W,39,36,11,11
+    PUSHBUTTON      "E",IDC_K_E,50,36,11,11
+    PUSHBUTTON      "R",IDC_K_R,61,36,11,11
+    PUSHBUTTON      "T",IDC_K_T,72,36,11,11
+    PUSHBUTTON      "Y",IDC_K_Y,83,36,11,11
+    PUSHBUTTON      "U",IDC_K_U,94,36,11,11
+    PUSHBUTTON      "I",IDC_K_I,105,36,11,11
+    PUSHBUTTON      "O",IDC_K_O,116,36,11,11
+    PUSHBUTTON      "P",IDC_K_P,127,36,11,11
+    PUSHBUTTON      "Å",IDC_K_RUOTS_O,138,36,11,11
+    PUSHBUTTON      "¨",IDC_K_DOTDOT,149,36,11,11
+    PUSHBUTTON      "",IDC_K_TAB,7,36,21,11
+    PUSHBUTTON      "A",IDC_K_A,30,47,11,11
+    PUSHBUTTON      "S",IDC_K_S,41,47,11,11
+    PUSHBUTTON      "D",IDC_K_D,52,47,11,11
+    PUSHBUTTON      "F",IDC_K_F,63,47,11,11
+    PUSHBUTTON      "G",IDC_K_G,74,47,11,11
+    PUSHBUTTON      "H",IDC_K_H,85,47,11,11
+    PUSHBUTTON      "J",IDC_K_J,96,47,11,11
+    PUSHBUTTON      "K",IDC_K_K,107,47,11,11
+    PUSHBUTTON      "L",IDC_K_L,118,47,11,11
+    PUSHBUTTON      "Ö",IDC_K_OO,129,47,11,11
+    PUSHBUTTON      "Ä",IDC_K_AA,140,47,11,11
+    PUSHBUTTON      "'",IDC_K_QUOTE,151,47,11,11
+    PUSHBUTTON      "",IDC_K_RET,162,36,10,22
+    PUSHBUTTON      "Caps",IDC_K_CAPSLOCK,7,47,23,11
+    PUSHBUTTON      "<",IDC_K_LESSTHAN,24,58,11,11
+    PUSHBUTTON      "Z",IDC_K_Z,35,58,11,11
+    PUSHBUTTON      "X",IDC_K_X,46,58,11,11
+    PUSHBUTTON      "C",IDC_K_C,57,58,11,11
+    PUSHBUTTON      "V",IDC_K_V,68,58,11,11
+    PUSHBUTTON      "B",IDC_K_B,79,58,11,11
+    PUSHBUTTON      "N",IDC_K_N,90,58,11,11
+    PUSHBUTTON      "M",IDC_K_M,101,58,11,11
+    PUSHBUTTON      ",",IDC_K_COMMA,112,58,11,11
+    PUSHBUTTON      ".",IDC_K_PERIOD,123,58,11,11
+    PUSHBUTTON      "-",IDC_K_HYPHEN,134,58,11,11
+    PUSHBUTTON      "",IDC_K_RSHIFT,145,58,27,11
+    PUSHBUTTON      "",IDC_K_LSHIFT,7,58,17,11
+    PUSHBUTTON      "",IDC_K_LCONTROL,7,69,17,11
+    PUSHBUTTON      "",IDC_K_LWIN,24,69,15,11
+    PUSHBUTTON      "",IDC_K_LALT,39,69,17,11
+    PUSHBUTTON      "",IDC_K_ALTGR,123,69,17,11
+    PUSHBUTTON      "",IDC_K_RWIN,140,69,15,11
+    PUSHBUTTON      "",IDC_K_RCONTROL,155,69,17,11
+    PUSHBUTTON      "",IDC_K_SPACE,56,69,67,11
+    PUSHBUTTON      "",IDC_K_ESC,7,7,11,11
+    PUSHBUTTON      "",IDC_K_F1,25,7,11,11
+    PUSHBUTTON      "",IDC_K_F2,36,7,11,11
+    PUSHBUTTON      "",IDC_K_F3,47,7,11,11
+    PUSHBUTTON      "",IDC_K_F4,58,7,11,11
+    PUSHBUTTON      "",IDC_K_F5,77,7,11,11
+    PUSHBUTTON      "",IDC_K_F6,88,7,11,11
+    PUSHBUTTON      "",IDC_K_F7,99,7,11,11
+    PUSHBUTTON      "",IDC_K_F8,110,7,11,11
+    PUSHBUTTON      "",IDC_K_F9,128,7,11,11
+    PUSHBUTTON      "",IDC_K_F10,139,7,11,11
+    PUSHBUTTON      "",IDC_K_F11,150,7,11,11
+    PUSHBUTTON      "",IDC_K_F12,161,7,11,11
+    PUSHBUTTON      "",IDC_K_PRINTSCREEN,178,7,11,11
+    PUSHBUTTON      "",IDC_K_SCROLL_LOCK,189,7,11,11
+    PUSHBUTTON      "",IDC_K_PAUSE,200,7,11,11
+    PUSHBUTTON      "",IDC_K_INSERT,178,25,11,11
+    PUSHBUTTON      "",IDC_K_HOME,189,25,11,11
+    PUSHBUTTON      "",IDC_K_PAGE_UP,200,25,11,11
+    PUSHBUTTON      "",IDC_K_DELETE,178,36,11,11
+    PUSHBUTTON      "",IDC_K_END,189,36,11,11
+    PUSHBUTTON      "",IDC_K_PAGE_DOWN,200,36,11,11
+    PUSHBUTTON      "",IDC_K_LEFT,178,69,11,11
+    PUSHBUTTON      "",IDC_K_DOWN,189,69,11,11
+    PUSHBUTTON      "",IDC_K_RIGHT,200,69,11,11
+    PUSHBUTTON      "",IDC_K_UP,189,58,11,11
+    PUSHBUTTON      "Nu",IDC_K_NUMLOCK,217,25,11,11
+    PUSHBUTTON      "/",IDC_K_NUMPAD_DIVIDE,228,25,11,11
+    PUSHBUTTON      "*",IDC_K_NUMPAD_MULTIPLE,239,25,11,11
+    PUSHBUTTON      "-",IDC_K_NUMPAD_MINUS,250,25,11,11
+    PUSHBUTTON      "7",IDC_K_NUMPAD_7,217,36,11,11
+    PUSHBUTTON      "8",IDC_K_NUMPAD_8,228,36,11,11
+    PUSHBUTTON      "9",IDC_K_NUMPAD_9,239,36,11,11
+    PUSHBUTTON      "+",IDC_K_NUMPAD_PLUS,250,36,11,22
+    PUSHBUTTON      "4",IDC_K_NUMPAD_4,217,47,11,11
+    PUSHBUTTON      "5",IDC_K_NUMPAD_5,228,47,11,11
+    PUSHBUTTON      "6",IDC_K_NUMPAD_6,239,47,11,11
+    PUSHBUTTON      "1",IDC_K_NUMPAD_1,217,58,11,11
+    PUSHBUTTON      "2",IDC_K_NUMPAD_2,228,58,11,11
+    PUSHBUTTON      "3",IDC_K_NUMPAD_3,239,58,11,11
+    PUSHBUTTON      ",",IDC_K_NUMPAD_COMMA,239,69,11,11
+    PUSHBUTTON      "0",IDC_K_NUMPAD_0,217,69,22,11
+    PUSHBUTTON      "E",IDC_K_NUMPAD_ENTER,250,58,11,22
+    LTEXT           "Click the key you want to modify. Then select the desired Mac keyboard code from the list.",
+                    IDC_STATIC,9,90,103,32,0,WS_EX_STATICEDGE
+    COMBOBOX        IDC_K_LIST,164,109,97,186,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_K_FRIENDLY_NAME,164,91,97,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "Windows:",IDC_STATIC,124,92,37,8
+    LTEXT           "MacOS:",IDC_STATIC,124,110,37,8
+END
+
+IDD_DX_FULL_SCREEN_HELP DIALOGEX 0, 0, 266, 228
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Select DirectX full-screen video mode"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Select",IDOK,209,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,209,24,50,14
+    LISTBOX         IDC_MODE_LIST,7,7,186,131,LBS_SORT | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Video modes that allocate more than 4MB of RAM may crash the NT version of Basilisk II. MacOS may behave erratically with very small video modes (for example 320x200).",
+                    IDC_STATIC,7,143,186,37,0,WS_EX_CLIENTEDGE
+    LTEXT           "If the refresh rates are all zeroes, your video adapter/driver does not support enumerating refresh rates. Update the driver software. Upgrading to a newer version of DirectX may help too.",
+                    IDC_STATIC,7,182,186,39,0,WS_EX_CLIENTEDGE
+END
+
+IDD_MOUNT_MODE_HELP DIALOG DISCARDABLE  0, 0, 335, 223
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Mount mode help"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,278,7,50,14
+    LTEXT           "Normally you want to mount your volume files (*.HFV) Read/Write. Any changes MacOS does are immediately committed to the volume. Be careful when mounting real disk partitions Read/Write.",
+                    IDC_STATIC,7,7,241,29
+    LTEXT           "All volume types can be mounted Read-Only. The contents of the volume are never modified. MacOS is aware that this is a Read-Only volume.",
+                    IDC_STATIC,7,42,321,24
+    LTEXT           "In Virtual Read/Write mode MacOS thinks that this is a Read/Write volume and is perceivably able to write to the volume. However, all changes are in fact directed to a temporary file, and are later discarded. This mode is supported for volume files only.",
+                    IDC_STATIC,7,72,321,32
+    LTEXT           "Undoable mode is similar to the Virtual Read/Write mode, but when Basilisk II is shutting down, you are asked whether you want the changes to be committed to the volume file. This mode is supported for volume files only.",
+                    IDC_STATIC,7,109,321,33
+    LTEXT           "If you intend to do a lot of important changes that you wish to keep, please make sure that you have enough free disk space. However, if you run out of space in unodable mode, you will have a chance to switch to Read/Write mode, keeping your changes.",
+                    IDC_STATIC,7,149,321,30
+    LTEXT           "The undo file may need up to the size of the volume file's worth of free space, normally a lot less, sometimes only a few kilobytes. If possible, the file is created to the same folder where the volume file is, otherwise to the Windows temporary folder.",
+                    IDC_STATIC,7,185,321,30
+END
+
+IDD_PAGE_SMP DIALOGEX 0, 0, 217, 225
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "SMP"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Ethernet",IDC_STATIC,7,60,51,8
+    LTEXT           "Serial port In",IDC_STATIC,7,73,50,8
+    LTEXT           "Serial port out",IDC_STATIC,7,86,52,8
+    LTEXT           "CPU",IDC_STATIC,7,99,52,8
+    LTEXT           "60 Hz && mouse",IDC_STATIC,7,112,51,8
+    LTEXT           "1 Hz",IDC_STATIC,7,125,52,8
+    LTEXT           "Param. RAM",IDC_STATIC,7,138,52,8
+    LTEXT           "GUI",IDC_STATIC,7,151,50,8
+    LTEXT           "GDI",IDC_STATIC,7,164,51,8
+    LTEXT           "Direct X",IDC_STATIC,7,177,49,8
+    LTEXT           "Frame buffer",IDC_STATIC,7,190,52,8
+    LTEXT           "Under a Windows NT or Windows 2000 SMP system, you can select on which CPU(s) different Basilisk II threads are allowed to run. Windows 9x does not support SMP. Leave all unchecked to use the default affinity mask.",
+                    IDC_STATIC,7,7,203,38,0,WS_EX_STATICEDGE
+    LTEXT           "Sound stream",IDC_STATIC,7,203,52,8
+    CONTROL         "1",IDC_SMP_ETHERNET_1,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,79,59,10,10
+    CONTROL         "2",IDC_SMP_ETHERNET_2,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,93,59,10,10
+    CONTROL         "3",IDC_SMP_ETHERNET_3,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,107,59,10,10
+    CONTROL         "4",IDC_SMP_ETHERNET_4,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,121,59,10,10
+    CONTROL         "5",IDC_SMP_ETHERNET_5,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,135,59,10,10
+    CONTROL         "6",IDC_SMP_ETHERNET_6,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,149,59,10,10
+    CONTROL         "7",IDC_SMP_ETHERNET_7,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,163,59,10,10
+    CONTROL         "8",IDC_SMP_ETHERNET_8,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,177,59,10,10
+    CONTROL         "1",IDC_SMP_SERIALIN_1,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,79,72,10,10
+    CONTROL         "2",IDC_SMP_SERIALIN_2,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,93,72,10,10
+    CONTROL         "3",IDC_SMP_SERIALIN_3,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,107,72,10,10
+    CONTROL         "4",IDC_SMP_SERIALIN_4,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,121,72,10,10
+    CONTROL         "5",IDC_SMP_SERIALIN_5,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,135,72,10,10
+    CONTROL         "6",IDC_SMP_SERIALIN_6,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,149,72,10,10
+    CONTROL         "7",IDC_SMP_SERIALIN_7,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,163,72,10,10
+    CONTROL         "8",IDC_SMP_SERIALIN_8,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,177,72,10,10
+    CONTROL         "1",IDC_SMP_SERIALOUT_1,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,79,85,10,10
+    CONTROL         "2",IDC_SMP_SERIALOUT_2,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,93,85,10,10
+    CONTROL         "3",IDC_SMP_SERIALOUT_3,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,107,85,10,10
+    CONTROL         "4",IDC_SMP_SERIALOUT_4,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,121,85,10,10
+    CONTROL         "5",IDC_SMP_SERIALOUT_5,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,135,85,10,10
+    CONTROL         "6",IDC_SMP_SERIALOUT_6,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,149,85,10,10
+    CONTROL         "7",IDC_SMP_SERIALOUT_7,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,163,85,10,10
+    CONTROL         "8",IDC_SMP_SERIALOUT_8,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,177,85,10,10
+    CONTROL         "1",IDC_SMP_CPU_1,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,79,98,10,10
+    CONTROL         "2",IDC_SMP_CPU_2,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,93,98,10,10
+    CONTROL         "3",IDC_SMP_CPU_3,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,107,98,10,10
+    CONTROL         "4",IDC_SMP_CPU_4,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,121,98,10,10
+    CONTROL         "5",IDC_SMP_CPU_5,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,135,98,10,10
+    CONTROL         "6",IDC_SMP_CPU_6,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,149,98,10,10
+    CONTROL         "7",IDC_SMP_CPU_7,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,163,98,10,10
+    CONTROL         "8",IDC_SMP_CPU_8,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,177,98,10,10
+    CONTROL         "1",IDC_SMP_60HZ_1,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,79,111,10,10
+    CONTROL         "2",IDC_SMP_60HZ_2,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,93,111,10,10
+    CONTROL         "3",IDC_SMP_60HZ_3,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,107,111,10,10
+    CONTROL         "4",IDC_SMP_60HZ_4,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,121,111,10,10
+    CONTROL         "5",IDC_SMP_60HZ_5,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,135,111,10,10
+    CONTROL         "6",IDC_SMP_60HZ_6,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,149,111,10,10
+    CONTROL         "7",IDC_SMP_60HZ_7,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,163,111,10,10
+    CONTROL         "8",IDC_SMP_60HZ_8,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,177,111,10,10
+    CONTROL         "1",IDC_SMP_1HZ_1,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,79,124,10,10
+    CONTROL         "2",IDC_SMP_1HZ_2,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,93,124,10,10
+    CONTROL         "3",IDC_SMP_1HZ_3,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,107,124,10,10
+    CONTROL         "4",IDC_SMP_1HZ_4,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,121,124,10,10
+    CONTROL         "5",IDC_SMP_1HZ_5,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,135,124,10,10
+    CONTROL         "6",IDC_SMP_1HZ_6,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,149,124,10,10
+    CONTROL         "7",IDC_SMP_1HZ_7,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,163,124,10,10
+    CONTROL         "8",IDC_SMP_1HZ_8,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,177,124,10,10
+    CONTROL         "1",IDC_SMP_PRAM_1,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,79,137,10,10
+    CONTROL         "2",IDC_SMP_PRAM_2,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,93,137,10,10
+    CONTROL         "3",IDC_SMP_PRAM_3,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,107,137,10,10
+    CONTROL         "4",IDC_SMP_PRAM_4,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,121,137,10,10
+    CONTROL         "5",IDC_SMP_PRAM_5,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,135,137,10,10
+    CONTROL         "6",IDC_SMP_PRAM_6,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,149,137,10,10
+    CONTROL         "7",IDC_SMP_PRAM_7,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,163,137,10,10
+    CONTROL         "8",IDC_SMP_PRAM_8,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,177,137,10,10
+    CONTROL         "1",IDC_SMP_GUI_1,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,79,150,10,10
+    CONTROL         "2",IDC_SMP_GUI_2,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,93,150,10,10
+    CONTROL         "3",IDC_SMP_GUI_3,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,107,150,10,10
+    CONTROL         "4",IDC_SMP_GUI_4,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,121,150,10,10
+    CONTROL         "5",IDC_SMP_GUI_5,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,135,150,10,10
+    CONTROL         "6",IDC_SMP_GUI_6,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,149,150,10,10
+    CONTROL         "7",IDC_SMP_GUI_7,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,163,150,10,10
+    CONTROL         "8",IDC_SMP_GUI_8,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,177,150,10,10
+    CONTROL         "1",IDC_SMP_GDI_1,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,79,163,10,10
+    CONTROL         "2",IDC_SMP_GDI_2,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,93,163,10,10
+    CONTROL         "3",IDC_SMP_GDI_3,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,107,163,10,10
+    CONTROL         "4",IDC_SMP_GDI_4,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,121,163,10,10
+    CONTROL         "5",IDC_SMP_GDI_5,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,135,163,10,10
+    CONTROL         "6",IDC_SMP_GDI_6,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,149,163,10,10
+    CONTROL         "7",IDC_SMP_GDI_7,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,163,163,10,10
+    CONTROL         "8",IDC_SMP_GDI_8,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,177,163,10,10
+    CONTROL         "1",IDC_SMP_DX_1,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,79,176,10,10
+    CONTROL         "2",IDC_SMP_DX_2,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,93,176,10,10
+    CONTROL         "3",IDC_SMP_DX_3,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,107,176,10,10
+    CONTROL         "4",IDC_SMP_DX_4,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,121,176,10,10
+    CONTROL         "5",IDC_SMP_DX_5,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,135,176,10,10
+    CONTROL         "6",IDC_SMP_DX_6,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,149,176,10,10
+    CONTROL         "7",IDC_SMP_DX_7,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,163,176,10,10
+    CONTROL         "8",IDC_SMP_DX_8,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,177,176,10,10
+    CONTROL         "1",IDC_SMP_FB_1,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,79,189,10,10
+    CONTROL         "2",IDC_SMP_FB_2,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,93,189,10,10
+    CONTROL         "3",IDC_SMP_FB_3,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,107,189,10,10
+    CONTROL         "4",IDC_SMP_FB_4,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,121,189,10,10
+    CONTROL         "5",IDC_SMP_FB_5,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,135,189,10,10
+    CONTROL         "6",IDC_SMP_FB_6,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,149,189,10,10
+    CONTROL         "7",IDC_SMP_FB_7,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,163,189,10,10
+    CONTROL         "8",IDC_SMP_FB_8,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | 
+                    WS_TABSTOP,177,189,10,10
+    CONTROL         "1",IDC_SMP_AUDIO_1,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,79,202,10,10
+    CONTROL         "2",IDC_SMP_AUDIO_2,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,93,202,10,10
+    CONTROL         "3",IDC_SMP_AUDIO_3,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,107,202,10,10
+    CONTROL         "4",IDC_SMP_AUDIO_4,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,121,202,10,10
+    CONTROL         "5",IDC_SMP_AUDIO_5,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,135,202,10,10
+    CONTROL         "6",IDC_SMP_AUDIO_6,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,149,202,10,10
+    CONTROL         "7",IDC_SMP_AUDIO_7,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,163,202,10,10
+    CONTROL         "8",IDC_SMP_AUDIO_8,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,177,202,10,10
+    GROUPBOX        " Allowed CPUs ",IDC_STATIC,66,47,134,171
+END
+
+IDD_PAGE_ROUTER DIALOGEX 0, 0, 217, 225
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Router"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Enable NAT/Router module",IDC_ROUTER_ENABLE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,13,16,131,10
+    PUSHBUTTON      "Help...",IDC_ROUTER_HELP,160,7,50,14
+    GROUPBOX        " FTP ports ",IDC_STATIC,7,37,203,83
+    LISTBOX         IDC_ROUTER_FTP_PORT_LIST,19,51,37,28,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Add...",IDC_ROUTER_NEW_FTP_PORT,67,58,50,14
+    PUSHBUTTON      "Delete",IDC_ROUTER_DEL_FTP_PORT,133,58,50,14
+    LTEXT           "The FTP ports need to be specified if your FTP client does not use PASV mode, or if you run FTP server.",
+                    IDC_STATIC,19,85,180,28,0,WS_EX_STATICEDGE
+    GROUPBOX        " Server ports  ",IDC_STATIC,7,127,203,90
+    LISTBOX         IDC_ROUTER_LISTEN_PORT_LIST,19,138,98,34,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Add...",IDC_ROUTER_NEW_LISTEN_PORT,146,138,50,14
+    PUSHBUTTON      "Delete",IDC_ROUTER_DEL_LISTEN_PORT,146,157,50,14
+    LTEXT           "If you run any server software (FTP, HTTP, anything really) on Basilisk II, you need to define the TCP port numbers here.",
+                    IDC_STATIC,19,179,180,35,0,WS_EX_STATICEDGE
+END
+
+IDD_ROUTER_HELP DIALOG DISCARDABLE  0, 0, 273, 258
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "NAT/Router help"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,111,237,50,14
+    LTEXT           "When enabled, Basilisk II uses your Windows Internet connection for TCP/IP traffic. Ethernet needs not to be enabled in GUI, but must be installed on the emulated Mac.",
+                    IDC_STATIC,7,7,259,31
+    LTEXT           "If you have both the ethernet and the NAT/Router module enabled, all IP traffic goes through Windows, but AppleTalk uses the real NIC.",
+                    IDC_STATIC,7,42,259,29
+    LTEXT           "Please consult to your network administrator before using any form of Basilisk II networking on a corporate network.",
+                    IDC_STATIC,7,207,259,24
+    LTEXT           "For more information, please read the document ""NAT-Router FAQ.html"" found in the distribution archive.",
+                    IDC_STATIC,7,178,259,25
+    LTEXT           "If you can already access the Internet from Basilisk II, you have little (if any) reason to use the router module and should leave this option unchecked.",
+                    IDC_STATIC,7,75,259,25
+    LTEXT           "Do not open any ""Server ports"" if you don't need them. The security hazards are the same as with any other server software.",
+                    IDC_STATIC,7,108,259,25
+    LTEXT           "Defining FTP ports is safe. Basilisk II needs to change the IP address in the FTP client ""PORT"" command so that the server can connect back, and needs to know which port numbers to monitor.",
+                    IDC_STATIC,7,137,259,32
+END
+
+IDD_ASK_NEW_PORT DIALOG DISCARDABLE  0, 0, 127, 46
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "New port"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_NEW_PORT_NUMBER,13,15,40,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,70,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,70,24,50,14
+END
+
+IDD_ASK_NEW_PORT_AND_IF DIALOGEX 0, 0, 192, 102
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "New port and interface"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_NEW_PORT_NUMBER,7,26,36,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_NEW_INTERFACE_NUMBER,53,26,73,60,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,135,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,135,24,50,14
+    LTEXT           "Port:",IDC_STATIC,7,14,37,8
+    LTEXT           "Interface:",IDC_STATIC,53,14,37,8
+    LTEXT           "The interface IP address is optional. Leaving it blank binds to all interfaces. For security reasons, on a multi-homed system you might want to bind to only one interface.",
+                    IDC_STATIC,7,52,178,43,0,WS_EX_STATICEDGE
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 0,8,0,142
+ PRODUCTVERSION 0,8,0,142
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x29L
+#else
+ FILEFLAGS 0x28L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "Basilisk II is copyright © 1997-2000 Christian Bauer et al. Windows specific code is copyright © Lauri Pesonen.\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "BasiliskII GUI\0"
+            VALUE "FileVersion", "0, 8, 0, 142\0"
+            VALUE "InternalName", "BasiliskII GUI\0"
+            VALUE "LegalCopyright", "Basilisk II is copyright © 1997-2000 Christian Bauer et al. Windows specific code is copyright © Lauri Pesonen.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "BasiliskIIGUI.EXE\0"
+            VALUE "PrivateBuild", "Demokratiassa idiootit saavat valita, diktatuurissa he saavat hallita. --Bernand Russel\0"
+            VALUE "ProductName", "BasiliskII GUI\0"
+            VALUE "ProductVersion", "0, 8, 0, 142\0"
+            VALUE "SpecialBuild", "<public>\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_PAGE_DISK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 218
+    END
+
+    IDD_PAGE_FLOPPY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 218
+    END
+
+    IDD_PAGE_CDROM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 218
+    END
+
+    IDD_PAGE_PORTS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 218
+    END
+
+    IDD_PAGE_MEMORY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 218
+    END
+
+    IDD_PAGE_SCREEN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 218
+    END
+
+    IDD_PAGE_SCSI, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 218
+    END
+
+    IDD_PAGE_GENERAL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 218
+    END
+
+    IDD_KEYBOARD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 298
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 124
+    END
+
+    IDD_PAGE_KEYBOARD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 218
+    END
+
+    IDD_PAGE_TOOLS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 218
+    END
+
+    IDD_PAGE_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 218
+    END
+
+    IDD_PAGE_ETHERNET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 218
+    END
+
+    IDD_NEW_HFV, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 230
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 168
+    END
+
+    IDD_ASK_SCSI_REPLACEMENT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 86
+    END
+
+    IDD_PAGE_PRIORITIES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 218
+    END
+
+    IDD_PAGE_AUDIO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 218
+    END
+
+    IDD_PAGE_DEBUG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 218
+    END
+
+    IDD_DASD_CONFIRM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 222
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 117
+    END
+
+    IDD_RW_CONFIRM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 241
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 247
+    END
+
+    IDD_PAGE_MOUSE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 218
+    END
+
+    IDD_PAGE_EXPERIMENT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 218
+    END
+
+    IDD_PAGE_DR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 218
+    END
+
+    IDD_PAGE_EXTFS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 218
+    END
+
+    IDD_FILETYPE_MAPPINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 271
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 183
+    END
+
+    IDD_KEYBOARD_BACKUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 326
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 125
+    END
+
+    IDD_DX_FULL_SCREEN_HELP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 259
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 221
+    END
+
+    IDD_MOUNT_MODE_HELP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 328
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 216
+    END
+
+    IDD_PAGE_SMP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 218
+    END
+
+    IDD_PAGE_ROUTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 217
+    END
+
+    IDD_ROUTER_HELP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 266
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 251
+    END
+
+    IDD_ASK_NEW_PORT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 120
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+    END
+
+    IDD_ASK_NEW_PORT_AND_IF, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 185
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 95
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PAGE_PORTS DLGINIT
+BEGIN
+    IDC_PORTS_MODEM, 0x403, 5, 0
+0x4f43, 0x314d, "\000" 
+    IDC_PORTS_MODEM, 0x403, 5, 0
+0x4f43, 0x324d, "\000" 
+    IDC_PORTS_MODEM, 0x403, 5, 0
+0x4f43, 0x334d, "\000" 
+    IDC_PORTS_MODEM, 0x403, 5, 0
+0x4f43, 0x344d, "\000" 
+    IDC_PORTS_MODEM, 0x403, 5, 0
+0x4f43, 0x354d, "\000" 
+    IDC_PORTS_MODEM, 0x403, 5, 0
+0x4f43, 0x364d, "\000" 
+    IDC_PORTS_MODEM, 0x403, 5, 0
+0x504c, 0x3154, "\000" 
+    IDC_PORTS_MODEM, 0x403, 5, 0
+0x504c, 0x3254, "\000" 
+    IDC_PORTS_MODEM, 0x403, 5, 0
+0x504c, 0x3354, "\000" 
+    IDC_PORTS_MODEM, 0x403, 5, 0
+0x504c, 0x3454, "\000" 
+    IDC_PORTS_MODEM, 0x403, 5, 0
+0x504c, 0x3554, "\000" 
+    IDC_PORTS_MODEM, 0x403, 5, 0
+0x504c, 0x3654, "\000" 
+    IDC_PORTS_MODEM, 0x403, 5, 0
+0x4946, 0x454c, "\000" 
+    IDC_PORTS_PRINTER, 0x403, 5, 0
+0x4f43, 0x314d, "\000" 
+    IDC_PORTS_PRINTER, 0x403, 5, 0
+0x4f43, 0x324d, "\000" 
+    IDC_PORTS_PRINTER, 0x403, 5, 0
+0x4f43, 0x334d, "\000" 
+    IDC_PORTS_PRINTER, 0x403, 5, 0
+0x4f43, 0x344d, "\000" 
+    IDC_PORTS_PRINTER, 0x403, 5, 0
+0x4f43, 0x354d, "\000" 
+    IDC_PORTS_PRINTER, 0x403, 5, 0
+0x4f43, 0x364d, "\000" 
+    IDC_PORTS_PRINTER, 0x403, 5, 0
+0x504c, 0x3154, "\000" 
+    IDC_PORTS_PRINTER, 0x403, 5, 0
+0x504c, 0x3254, "\000" 
+    IDC_PORTS_PRINTER, 0x403, 5, 0
+0x504c, 0x3354, "\000" 
+    IDC_PORTS_PRINTER, 0x403, 5, 0
+0x504c, 0x3454, "\000" 
+    IDC_PORTS_PRINTER, 0x403, 5, 0
+0x504c, 0x3554, "\000" 
+    IDC_PORTS_PRINTER, 0x403, 5, 0
+0x504c, 0x3654, "\000" 
+    IDC_PORTS_PRINTER, 0x403, 5, 0
+0x4946, 0x454c, "\000" 
+    0
+END
+
+IDD_PAGE_SCREEN DLGINIT
+BEGIN
+    IDC_SCREEN_TYPE, 0x403, 12, 0
+0x6957, 0x646e, 0x776f, 0x2073, 0x4447, 0x0049, 
+    IDC_SCREEN_TYPE, 0x403, 25, 0
+0x6944, 0x6572, 0x7463, 0x5820, 0x5b20, 0x6620, 0x6c75, 0x206c, 0x6373, 
+0x6572, 0x6e65, 0x5d20, "\000" 
+    IDC_SCREEN_TYPE, 0x403, 25, 0
+0x6944, 0x6572, 0x7463, 0x5820, 0x5b20, 0x6920, 0x206e, 0x2061, 0x6977, 
+0x646e, 0x776f, 0x5d20, "\000" 
+    IDC_SCREEN_TYPE, 0x403, 27, 0
+0x694c, 0x656e, 0x7261, 0x6620, 0x6172, 0x656d, 0x6220, 0x6675, 0x6566, 
+0x2072, 0x205b, 0x544e, 0x5d20, "\000" 
+    IDC_SCREEN_WIDTH, 0x403, 12, 0
+0x7546, 0x6c6c, 0x5320, 0x7263, 0x6565, 0x006e, 
+    IDC_SCREEN_WIDTH, 0x403, 4, 0
+0x3436, 0x0030, 
+    IDC_SCREEN_WIDTH, 0x403, 4, 0
+0x3038, 0x0030, 
+    IDC_SCREEN_WIDTH, 0x403, 5, 0
+0x3031, 0x3432, "\000" 
+    IDC_SCREEN_WIDTH, 0x403, 5, 0
+0x3131, 0x3235, "\000" 
+    IDC_SCREEN_WIDTH, 0x403, 5, 0
+0x3231, 0x3038, "\000" 
+    IDC_SCREEN_WIDTH, 0x403, 5, 0
+0x3631, 0x3030, "\000" 
+    IDC_SCREEN_HEIGHT, 0x403, 12, 0
+0x7546, 0x6c6c, 0x5320, 0x7263, 0x6565, 0x006e, 
+    IDC_SCREEN_HEIGHT, 0x403, 4, 0
+0x3834, 0x0030, 
+    IDC_SCREEN_HEIGHT, 0x403, 4, 0
+0x3036, 0x0030, 
+    IDC_SCREEN_HEIGHT, 0x403, 4, 0
+0x3637, 0x0038, 
+    IDC_SCREEN_HEIGHT, 0x403, 4, 0
+0x3638, 0x0034, 
+    IDC_SCREEN_HEIGHT, 0x403, 5, 0
+0x3031, 0x3432, "\000" 
+    IDC_SCREEN_HEIGHT, 0x403, 5, 0
+0x3231, 0x3030, "\000" 
+    IDC_SCREEN_HEIGHT, 0x403, 5, 0
+0x3231, 0x3038, "\000" 
+    IDC_SCREEN_BITS, 0x403, 24, 0
+0x7543, 0x7272, 0x6e65, 0x2074, 0x6957, 0x646e, 0x776f, 0x2073, 0x6573, 
+0x7474, 0x6e69, 0x0067, 
+    IDC_SCREEN_BITS, 0x403, 24, 0
+0x6c42, 0x6361, 0x206b, 0x2026, 0x6857, 0x7469, 0x2065, 0x2020, 0x3128, 
+0x6220, 0x7469, 0x0029, 
+    IDC_SCREEN_BITS, 0x403, 27, 0
+0x2034, 0x6f63, 0x6f6c, 0x2072, 0x6170, 0x656c, 0x7474, 0x2065, 0x2020, 
+0x3228, 0x6220, 0x7469, 0x2973, "\000" 
+    IDC_SCREEN_BITS, 0x403, 28, 0
+0x3631, 0x6320, 0x6c6f, 0x726f, 0x7020, 0x6c61, 0x7465, 0x6574, 0x2020, 
+0x2820, 0x2034, 0x6962, 0x7374, 0x0029, 
+    IDC_SCREEN_BITS, 0x403, 28, 0
+0x3532, 0x2036, 0x6f63, 0x6f6c, 0x2072, 0x6170, 0x656c, 0x7474, 0x2065, 
+0x2020, 0x3828, 0x622d, 0x7469, 0x0029, 
+    IDC_SCREEN_BITS, 0x403, 21, 0
+0x6854, 0x756f, 0x6173, 0x646e, 0x2073, 0x2020, 0x3128, 0x2d35, 0x6962, 
+0x2974, "\000" 
+    IDC_SCREEN_BITS, 0x403, 21, 0
+0x6854, 0x756f, 0x6173, 0x646e, 0x2073, 0x2020, 0x3128, 0x2d36, 0x6962, 
+0x2974, "\000" 
+    IDC_SCREEN_BITS, 0x403, 20, 0
+0x694d, 0x6c6c, 0x6f69, 0x736e, 0x2020, 0x2820, 0x3432, 0x622d, 0x7469, 
+0x0029, 
+    IDC_SCREEN_BITS, 0x403, 20, 0
+0x694d, 0x6c6c, 0x6f69, 0x736e, 0x2020, 0x2820, 0x3233, 0x622d, 0x7469, 
+0x0029, 
+    0
+END
+
+IDD_PAGE_GENERAL DLGINIT
+BEGIN
+    IDC_GENERAL_BOOT_DRIVER, 0x403, 38, 0
+0x2030, 0x2020, 0x2020, 0x6f42, 0x746f, 0x6620, 0x6f72, 0x206d, 0x6966, 
+0x7372, 0x2074, 0x6f62, 0x746f, 0x6261, 0x656c, 0x7620, 0x6c6f, 0x6d75, 
+0x0065, 
+    IDC_GENERAL_BOOT_DRIVER, 0x403, 35, 0
+0x362d, 0x2032, 0x4220, 0x6f6f, 0x2074, 0x7266, 0x6d6f, 0x7420, 0x6568, 
+0x6520, 0x756d, 0x616c, 0x6574, 0x2064, 0x4443, 0x522d, 0x4d4f, "\000" 
+    IDC_GENERAL_MODEL_ID, 0x403, 17, 0
+0x2035, 0x2020, 0x2020, 0x4d28, 0x6361, 0x4920, 0x6349, 0x2969, "\000" 
+    IDC_GENERAL_MODEL_ID, 0x403, 17, 0
+0x2037, 0x2020, 0x2020, 0x4d28, 0x6361, 0x4920, 0x6649, 0x2978, "\000" 
+    IDC_GENERAL_MODEL_ID, 0x403, 22, 0
+0x3431, 0x2020, 0x2820, 0x614d, 0x2063, 0x7551, 0x6461, 0x6172, 0x3920, 
+0x3030, 0x0029, 
+    IDC_GENERAL_MODEL_ID, 0x403, 22, 0
+0x3631, 0x2020, 0x2820, 0x614d, 0x2063, 0x7551, 0x6461, 0x6172, 0x3720, 
+0x3030, 0x0029, 
+    IDC_GENERAL_MODEL_ID, 0x403, 22, 0
+0x3032, 0x2020, 0x2820, 0x614d, 0x2063, 0x7551, 0x6461, 0x6172, 0x3920, 
+0x3035, 0x0029, 
+    IDC_GENERAL_MODEL_ID, 0x403, 18, 0
+0x3132, 0x2020, 0x2820, 0x614d, 0x2063, 0x434c, 0x4920, 0x4949, 0x0029, 
+
+    IDC_GENERAL_MODEL_ID, 0x403, 23, 0
+0x3432, 0x2020, 0x2820, 0x614d, 0x2063, 0x6543, 0x746e, 0x6972, 0x2073, 
+0x3536, 0x2930, "\000" 
+    IDC_GENERAL_MODEL_ID, 0x403, 22, 0
+0x3932, 0x2020, 0x2820, 0x614d, 0x2063, 0x7551, 0x6461, 0x6172, 0x3820, 
+0x3030, 0x0029, 
+    IDC_GENERAL_MODEL_ID, 0x403, 22, 0
+0x3033, 0x2020, 0x2820, 0x614d, 0x2063, 0x7551, 0x6461, 0x6172, 0x3620, 
+0x3035, 0x0029, 
+    IDC_GENERAL_MODEL_ID, 0x403, 17, 0
+0x3133, 0x2020, 0x2820, 0x614d, 0x2063, 0x434c, 0x4920, 0x2949, "\000" 
+    IDC_GENERAL_MODEL_ID, 0x403, 16, 0
+0x3833, 0x2020, 0x2820, 0x614d, 0x2063, 0x4949, 0x6976, 0x0029, 
+    IDC_GENERAL_MODEL_ID, 0x403, 24, 0
+0x3933, 0x2020, 0x2820, 0x614d, 0x2063, 0x6550, 0x6672, 0x726f, 0x616d, 
+0x3620, 0x3030, 0x0029, 
+    IDC_GENERAL_MODEL_ID, 0x403, 16, 0
+0x3234, 0x2020, 0x2820, 0x614d, 0x2063, 0x4949, 0x7876, 0x0029, 
+    IDC_GENERAL_MODEL_ID, 0x403, 25, 0
+0x3334, 0x2020, 0x2820, 0x614d, 0x2063, 0x6f43, 0x6f6c, 0x2072, 0x6c43, 
+0x7361, 0x6973, 0x2963, "\000" 
+    IDC_GENERAL_MODEL_ID, 0x403, 15, 0
+0x3534, 0x2020, 0x2820, 0x6e55, 0x6e6b, 0x776f, 0x296e, "\000" 
+    IDC_GENERAL_MODEL_ID, 0x403, 23, 0
+0x3634, 0x2020, 0x2820, 0x614d, 0x2063, 0x6543, 0x746e, 0x6972, 0x2073, 
+0x3136, 0x2930, "\000" 
+    IDC_GENERAL_MODEL_ID, 0x403, 22, 0
+0x3734, 0x2020, 0x2820, 0x614d, 0x2063, 0x7551, 0x6461, 0x6172, 0x3620, 
+0x3031, 0x0029, 
+    IDC_GENERAL_MODEL_ID, 0x403, 18, 0
+0x3035, 0x2020, 0x2820, 0x614d, 0x2063, 0x434c, 0x3520, 0x3032, 0x0029, 
+
+    IDC_GENERAL_MODEL_ID, 0x403, 15, 0
+0x3335, 0x2020, 0x2820, 0x6e55, 0x6e6b, 0x776f, 0x296e, "\000" 
+    IDC_GENERAL_MODEL_ID, 0x403, 32, 0
+0x3635, 0x2020, 0x2820, 0x434c, 0x4949, 0x2b49, 0x202c, 0x6550, 0x6672, 
+0x726f, 0x616d, 0x3420, 0x3036, 0x342d, 0x3736, 0x0029, 
+    IDC_GENERAL_MODEL_ID, 0x403, 15, 0
+0x3735, 0x2020, 0x2820, 0x6e55, 0x6e6b, 0x776f, 0x296e, "\000" 
+    IDC_GENERAL_MODEL_ID, 0x403, 31, 0
+0x3437, 0x2020, 0x2820, 0x614d, 0x2063, 0x434c, 0x502f, 0x7265, 0x6f66, 
+0x6d72, 0x2061, 0x3535, 0x2c30, 0x3635, 0x2930, "\000" 
+    IDC_GENERAL_MODEL_ID, 0x403, 15, 0
+0x3537, 0x2020, 0x2820, 0x6e55, 0x6e6b, 0x776f, 0x296e, "\000" 
+    IDC_GENERAL_MODEL_ID, 0x403, 42, 0
+0x3737, 0x2020, 0x2820, 0x614d, 0x2063, 0x6f43, 0x6f6c, 0x2072, 0x6c43, 
+0x7361, 0x6973, 0x2063, 0x4949, 0x202c, 0x6550, 0x6672, 0x726f, 0x616d, 
+0x3220, 0x3537, 0x0029, 
+    IDC_GENERAL_MODEL_ID, 0x403, 34, 0
+0x3038, 0x2020, 0x2820, 0x614d, 0x2063, 0x434c, 0x502f, 0x7265, 0x6f66, 
+0x6d72, 0x2061, 0x3734, 0x2d35, 0x3734, 0x2f36, 0x3032, 0x0029, 
+    IDC_GENERAL_MODEL_ID, 0x403, 34, 0
+0x3138, 0x2020, 0x2820, 0x614d, 0x2063, 0x434c, 0x502f, 0x7265, 0x6f66, 
+0x6d72, 0x2061, 0x3735, 0x2d35, 0x3735, 0x2f38, 0x3032, 0x0029, 
+    IDC_GENERAL_MODEL_ID, 0x403, 31, 0
+0x3338, 0x2020, 0x2820, 0x614d, 0x2063, 0x434c, 0x502f, 0x7265, 0x6f66, 
+0x6d72, 0x2061, 0x3734, 0x2d35, 0x3734, 0x2936, "\000" 
+    IDC_GENERAL_MODEL_ID, 0x403, 34, 0
+0x3438, 0x2020, 0x2820, 0x614d, 0x2063, 0x434c, 0x502f, 0x7265, 0x6f66, 
+0x6d72, 0x2061, 0x3734, 0x2d35, 0x3734, 0x2f36, 0x3333, 0x0029, 
+    IDC_GENERAL_MODEL_ID, 0x403, 34, 0
+0x3538, 0x2020, 0x2820, 0x614d, 0x2063, 0x434c, 0x502f, 0x7265, 0x6f66, 
+0x6d72, 0x2061, 0x3735, 0x2d35, 0x3735, 0x2f38, 0x3532, 0x0029, 
+    IDC_GENERAL_MODEL_ID, 0x403, 31, 0
+0x3638, 0x2020, 0x2820, 0x614d, 0x2063, 0x434c, 0x502f, 0x7265, 0x6f66, 
+0x6d72, 0x2061, 0x3735, 0x2d35, 0x3735, 0x2938, "\000" 
+    IDC_GENERAL_MODEL_ID, 0x403, 25, 0
+0x3738, 0x2020, 0x2820, 0x614d, 0x2063, 0x7551, 0x6461, 0x6172, 0x3620, 
+0x3530, 0x322f, 0x2930, "\000" 
+    IDC_GENERAL_MODEL_ID, 0x403, 22, 0
+0x3838, 0x2020, 0x2820, 0x614d, 0x2063, 0x7551, 0x6461, 0x6172, 0x3620, 
+0x3530, 0x0029, 
+    IDC_GENERAL_MODEL_ID, 0x403, 25, 0
+0x3938, 0x2020, 0x2820, 0x614d, 0x2063, 0x7551, 0x6461, 0x6172, 0x3620, 
+0x3530, 0x332f, 0x2933, "\000" 
+    IDC_CPU, 0x403, 6, 0
+0x3836, 0x3230, 0x0030, 
+    IDC_CPU, 0x403, 6, 0
+0x3836, 0x3330, 0x0030, 
+    IDC_CPU, 0x403, 6, 0
+0x3836, 0x3430, 0x0030, 
+    0
+END
+
+IDD_KEYBOARD DLGINIT
+BEGIN
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3030, 0x2020, 0x2720, 0x2741, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3130, 0x2020, 0x2720, 0x2753, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3230, 0x2020, 0x2720, 0x2744, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3330, 0x2020, 0x2720, 0x2746, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3430, 0x2020, 0x2720, 0x2748, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3530, 0x2020, 0x2720, 0x2747, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3630, 0x2020, 0x2720, 0x275a, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3730, 0x2020, 0x2720, 0x2758, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3830, 0x2020, 0x2720, 0x2743, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3930, 0x2020, 0x2720, 0x2756, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4130, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x4230, 0x2020, 0x2720, 0x2742, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x4330, 0x2020, 0x2720, 0x2751, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x4430, 0x2020, 0x2720, 0x2757, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x4530, 0x2020, 0x2720, 0x2745, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x4630, 0x2020, 0x2720, 0x2752, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3031, 0x2020, 0x2720, 0x2759, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3131, 0x2020, 0x2720, 0x2754, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3231, 0x2020, 0x2720, 0x2731, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3331, 0x2020, 0x2720, 0x2732, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3431, 0x2020, 0x2720, 0x2733, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3531, 0x2020, 0x2720, 0x2734, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3631, 0x2020, 0x2720, 0x2736, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3731, 0x2020, 0x2720, 0x2735, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3831, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3931, 0x2020, 0x2720, 0x2739, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x4131, 0x2020, 0x2720, 0x2737, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4231, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x4331, 0x2020, 0x2720, 0x2738, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x4431, 0x2020, 0x2720, 0x2730, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4531, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x4631, 0x2020, 0x2720, 0x274f, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3032, 0x2020, 0x2720, 0x2755, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3132, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3232, 0x2020, 0x2720, 0x2749, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3332, 0x2020, 0x2720, 0x2750, "\000" 
+    IDC_K_LIST, 0x403, 14, 0
+0x7830, 0x3432, 0x2020, 0x5220, 0x7465, 0x7275, 0x006e, 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3532, 0x2020, 0x2720, 0x274c, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3632, 0x2020, 0x2720, 0x274a, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3732, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3832, 0x2020, 0x2720, 0x274b, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3932, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4132, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4232, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4332, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x4432, 0x2020, 0x2720, 0x274e, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x4532, 0x2020, 0x2720, 0x274d, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4632, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3033, 0x2020, 0x5420, 0x6261, "\000" 
+    IDC_K_LIST, 0x403, 13, 0
+0x7830, 0x3133, 0x2020, 0x5320, 0x6170, 0x6563, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3233, "\000" 
+    IDC_K_LIST, 0x403, 17, 0
+0x7830, 0x3333, 0x2020, 0x4220, 0x6361, 0x736b, 0x6170, 0x6563, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3433, "\000" 
+    IDC_K_LIST, 0x403, 14, 0
+0x7830, 0x3533, 0x2020, 0x4520, 0x6373, 0x7061, 0x0065, 
+    IDC_K_LIST, 0x403, 15, 0
+0x7830, 0x3633, 0x2020, 0x4320, 0x6e6f, 0x7274, 0x6c6f, "\000" 
+    IDC_K_LIST, 0x403, 15, 0
+0x7830, 0x3733, 0x2020, 0x4320, 0x6d6f, 0x616d, 0x646e, "\000" 
+    IDC_K_LIST, 0x403, 13, 0
+0x7830, 0x3833, 0x2020, 0x5320, 0x6968, 0x7466, "\000" 
+    IDC_K_LIST, 0x403, 17, 0
+0x7830, 0x3933, 0x2020, 0x4320, 0x7061, 0x2073, 0x6f4c, 0x6b63, "\000" 
+    IDC_K_LIST, 0x403, 14, 0
+0x7830, 0x4133, 0x2020, 0x4f20, 0x7470, 0x6f69, 0x006e, 
+    IDC_K_LIST, 0x403, 12, 0
+0x7830, 0x4233, 0x2020, 0x4c20, 0x6665, 0x0074, 
+    IDC_K_LIST, 0x403, 13, 0
+0x7830, 0x4333, 0x2020, 0x5220, 0x6769, 0x7468, "\000" 
+    IDC_K_LIST, 0x403, 12, 0
+0x7830, 0x4433, 0x2020, 0x4420, 0x776f, 0x006e, 
+    IDC_K_LIST, 0x403, 10, 0
+0x7830, 0x4533, 0x2020, 0x5520, 0x0070, 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4633, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3034, "\000" 
+    IDC_K_LIST, 0x403, 22, 0
+0x7830, 0x3134, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x6564, 0x6963, 
+0x616d, 0x006c, 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3234, "\000" 
+    IDC_K_LIST, 0x403, 23, 0
+0x7830, 0x3334, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x756d, 0x746c, 
+0x7069, 0x796c, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3434, "\000" 
+    IDC_K_LIST, 0x403, 18, 0
+0x7830, 0x3534, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x6461, 0x0064, 
+
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3634, "\000" 
+    IDC_K_LIST, 0x403, 13, 0
+0x7830, 0x3734, 0x2020, 0x4320, 0x656c, 0x7261, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3834, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3934, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4134, "\000" 
+    IDC_K_LIST, 0x403, 21, 0
+0x7830, 0x4234, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x6964, 0x6976, 
+0x6564, "\000" 
+    IDC_K_LIST, 0x403, 24, 0
+0x7830, 0x4334, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x6573, 0x6170, 
+0x6172, 0x6f74, 0x0072, 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4434, "\000" 
+    IDC_K_LIST, 0x403, 23, 0
+0x7830, 0x4534, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x7573, 0x7462, 
+0x6172, 0x7463, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4634, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3035, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3135, "\000" 
+    IDC_K_LIST, 0x403, 16, 0
+0x7830, 0x3235, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x0030, 
+    IDC_K_LIST, 0x403, 16, 0
+0x7830, 0x3335, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x0031, 
+    IDC_K_LIST, 0x403, 16, 0
+0x7830, 0x3435, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x0032, 
+    IDC_K_LIST, 0x403, 16, 0
+0x7830, 0x3535, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x0033, 
+    IDC_K_LIST, 0x403, 16, 0
+0x7830, 0x3635, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x0034, 
+    IDC_K_LIST, 0x403, 16, 0
+0x7830, 0x3735, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x0035, 
+    IDC_K_LIST, 0x403, 16, 0
+0x7830, 0x3835, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x0036, 
+    IDC_K_LIST, 0x403, 16, 0
+0x7830, 0x3935, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x0037, 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4135, "\000" 
+    IDC_K_LIST, 0x403, 16, 0
+0x7830, 0x4235, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x0038, 
+    IDC_K_LIST, 0x403, 16, 0
+0x7830, 0x4335, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x0039, 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4435, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4535, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4635, "\000" 
+    IDC_K_LIST, 0x403, 10, 0
+0x7830, 0x3036, 0x2020, 0x4620, 0x0035, 
+    IDC_K_LIST, 0x403, 10, 0
+0x7830, 0x3136, 0x2020, 0x4620, 0x0036, 
+    IDC_K_LIST, 0x403, 10, 0
+0x7830, 0x3236, 0x2020, 0x4620, 0x0037, 
+    IDC_K_LIST, 0x403, 10, 0
+0x7830, 0x3336, 0x2020, 0x4620, 0x0033, 
+    IDC_K_LIST, 0x403, 10, 0
+0x7830, 0x3436, 0x2020, 0x4620, 0x0038, 
+    IDC_K_LIST, 0x403, 10, 0
+0x7830, 0x3536, 0x2020, 0x4620, 0x0039, 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3636, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3736, 0x2020, 0x4620, 0x3131, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3836, "\000" 
+    IDC_K_LIST, 0x403, 13, 0
+0x7830, 0x3936, 0x2020, 0x5020, 0x6972, 0x746e, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4136, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x4236, 0x2020, 0x4620, 0x3431, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4336, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x4436, 0x2020, 0x4620, 0x3031, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4536, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x4636, 0x2020, 0x4620, 0x3231, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3037, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3137, "\000" 
+    IDC_K_LIST, 0x403, 12, 0
+0x7830, 0x3237, 0x2020, 0x4820, 0x6c65, 0x0070, 
+    IDC_K_LIST, 0x403, 12, 0
+0x7830, 0x3337, 0x2020, 0x4820, 0x6d6f, 0x0065, 
+    IDC_K_LIST, 0x403, 15, 0
+0x7830, 0x3437, 0x2020, 0x5020, 0x6761, 0x2065, 0x7075, "\000" 
+    IDC_K_LIST, 0x403, 22, 0
+0x7830, 0x3537, 0x2020, 0x4620, 0x726f, 0x6177, 0x6472, 0x4420, 0x6c65, 
+0x7465, 0x0065, 
+    IDC_K_LIST, 0x403, 10, 0
+0x7830, 0x3637, 0x2020, 0x4620, 0x0034, 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3737, 0x2020, 0x4520, 0x646e, "\000" 
+    IDC_K_LIST, 0x403, 10, 0
+0x7830, 0x3837, 0x2020, 0x4620, 0x0032, 
+    IDC_K_LIST, 0x403, 17, 0
+0x7830, 0x3937, 0x2020, 0x5020, 0x6761, 0x2065, 0x6f64, 0x6e77, "\000" 
+    IDC_K_LIST, 0x403, 10, 0
+0x7830, 0x4137, 0x2020, 0x4620, 0x0031, 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4237, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4337, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4437, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4537, "\000" 
+    IDC_K_LIST, 0x403, 13, 0
+0x7830, 0x4637, 0x2020, 0x5020, 0x776f, 0x7265, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3038, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3138, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3238, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3338, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3438, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3538, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3638, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3738, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3838, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3938, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4138, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4238, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4338, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4438, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4538, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4638, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3039, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3139, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3239, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3339, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3439, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3539, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3639, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3739, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3839, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3939, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4139, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4239, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4339, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4439, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4539, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4639, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3041, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3141, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3241, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3341, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3441, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3541, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3641, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3741, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3841, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3941, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4141, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4241, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4341, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4441, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4541, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4641, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3042, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3142, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3242, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3342, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3442, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3542, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3642, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3742, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3842, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3942, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4142, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4242, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4342, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4442, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4542, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4642, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3043, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3143, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3243, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3343, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3443, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3543, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3643, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3743, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3843, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3943, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4143, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4243, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4343, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4443, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4543, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4643, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3044, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3144, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3244, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3344, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3444, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3544, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3644, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3744, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3844, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3944, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4144, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4244, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4344, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4444, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4544, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4644, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3045, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3145, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3245, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3345, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3445, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3545, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3645, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3745, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3845, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3945, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4145, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4245, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4345, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4445, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4545, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4645, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3046, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3146, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3246, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3346, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3446, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3546, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3646, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3746, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3846, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3946, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4146, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4246, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4346, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4446, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4546, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4646, "\000" 
+    0
+END
+
+IDD_PAGE_PRIORITIES DLGINIT
+BEGIN
+    IDC_PRI_ETHERNET_RUN, 0x403, 7, 0
+0x6f4c, 0x6577, 0x7473, "\000" 
+    IDC_PRI_ETHERNET_RUN, 0x403, 13, 0
+0x6542, 0x6f6c, 0x2077, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_ETHERNET_RUN, 0x403, 7, 0
+0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_ETHERNET_RUN, 0x403, 13, 0
+0x6241, 0x766f, 0x2065, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_ETHERNET_RUN, 0x403, 8, 0
+0x6948, 0x6867, 0x7365, 0x0074, 
+    IDC_PRI_ETHERNET_IDLE, 0x403, 7, 0
+0x6f4c, 0x6577, 0x7473, "\000" 
+    IDC_PRI_ETHERNET_IDLE, 0x403, 13, 0
+0x6542, 0x6f6c, 0x2077, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_ETHERNET_IDLE, 0x403, 7, 0
+0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_ETHERNET_IDLE, 0x403, 13, 0
+0x6241, 0x766f, 0x2065, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_ETHERNET_IDLE, 0x403, 8, 0
+0x6948, 0x6867, 0x7365, 0x0074, 
+    IDC_PRI_SERIAL_IN_RUN, 0x403, 7, 0
+0x6f4c, 0x6577, 0x7473, "\000" 
+    IDC_PRI_SERIAL_IN_RUN, 0x403, 13, 0
+0x6542, 0x6f6c, 0x2077, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_SERIAL_IN_RUN, 0x403, 7, 0
+0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_SERIAL_IN_RUN, 0x403, 13, 0
+0x6241, 0x766f, 0x2065, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_SERIAL_IN_RUN, 0x403, 8, 0
+0x6948, 0x6867, 0x7365, 0x0074, 
+    IDC_PRI_SERIAL_IN_IDLE, 0x403, 7, 0
+0x6f4c, 0x6577, 0x7473, "\000" 
+    IDC_PRI_SERIAL_IN_IDLE, 0x403, 13, 0
+0x6542, 0x6f6c, 0x2077, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_SERIAL_IN_IDLE, 0x403, 7, 0
+0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_SERIAL_IN_IDLE, 0x403, 13, 0
+0x6241, 0x766f, 0x2065, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_SERIAL_IN_IDLE, 0x403, 8, 0
+0x6948, 0x6867, 0x7365, 0x0074, 
+    IDC_PRI_SERIAL_OUT_RUN, 0x403, 7, 0
+0x6f4c, 0x6577, 0x7473, "\000" 
+    IDC_PRI_SERIAL_OUT_RUN, 0x403, 13, 0
+0x6542, 0x6f6c, 0x2077, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_SERIAL_OUT_RUN, 0x403, 7, 0
+0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_SERIAL_OUT_RUN, 0x403, 13, 0
+0x6241, 0x766f, 0x2065, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_SERIAL_OUT_RUN, 0x403, 8, 0
+0x6948, 0x6867, 0x7365, 0x0074, 
+    IDC_PRI_SERIAL_OUT_IDLE, 0x403, 7, 0
+0x6f4c, 0x6577, 0x7473, "\000" 
+    IDC_PRI_SERIAL_OUT_IDLE, 0x403, 13, 0
+0x6542, 0x6f6c, 0x2077, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_SERIAL_OUT_IDLE, 0x403, 7, 0
+0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_SERIAL_OUT_IDLE, 0x403, 13, 0
+0x6241, 0x766f, 0x2065, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_SERIAL_OUT_IDLE, 0x403, 8, 0
+0x6948, 0x6867, 0x7365, 0x0074, 
+    IDC_PRI_CPU_RUN, 0x403, 7, 0
+0x6f4c, 0x6577, 0x7473, "\000" 
+    IDC_PRI_CPU_RUN, 0x403, 13, 0
+0x6542, 0x6f6c, 0x2077, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_CPU_RUN, 0x403, 7, 0
+0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_CPU_RUN, 0x403, 13, 0
+0x6241, 0x766f, 0x2065, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_CPU_RUN, 0x403, 8, 0
+0x6948, 0x6867, 0x7365, 0x0074, 
+    IDC_PRI_CPU_IDLE, 0x403, 7, 0
+0x6f4c, 0x6577, 0x7473, "\000" 
+    IDC_PRI_CPU_IDLE, 0x403, 13, 0
+0x6542, 0x6f6c, 0x2077, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_CPU_IDLE, 0x403, 7, 0
+0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_CPU_IDLE, 0x403, 13, 0
+0x6241, 0x766f, 0x2065, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_CPU_IDLE, 0x403, 8, 0
+0x6948, 0x6867, 0x7365, 0x0074, 
+    IDC_PRI_60HZ_RUN, 0x403, 7, 0
+0x6f4c, 0x6577, 0x7473, "\000" 
+    IDC_PRI_60HZ_RUN, 0x403, 13, 0
+0x6542, 0x6f6c, 0x2077, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_60HZ_RUN, 0x403, 7, 0
+0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_60HZ_RUN, 0x403, 13, 0
+0x6241, 0x766f, 0x2065, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_60HZ_RUN, 0x403, 8, 0
+0x6948, 0x6867, 0x7365, 0x0074, 
+    IDC_PRI_60HZ_IDLE, 0x403, 7, 0
+0x6f4c, 0x6577, 0x7473, "\000" 
+    IDC_PRI_60HZ_IDLE, 0x403, 13, 0
+0x6542, 0x6f6c, 0x2077, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_60HZ_IDLE, 0x403, 7, 0
+0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_60HZ_IDLE, 0x403, 13, 0
+0x6241, 0x766f, 0x2065, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_60HZ_IDLE, 0x403, 8, 0
+0x6948, 0x6867, 0x7365, 0x0074, 
+    IDC_PRI_1HZ_RUN, 0x403, 7, 0
+0x6f4c, 0x6577, 0x7473, "\000" 
+    IDC_PRI_1HZ_RUN, 0x403, 13, 0
+0x6542, 0x6f6c, 0x2077, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_1HZ_RUN, 0x403, 7, 0
+0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_1HZ_RUN, 0x403, 13, 0
+0x6241, 0x766f, 0x2065, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_1HZ_RUN, 0x403, 8, 0
+0x6948, 0x6867, 0x7365, 0x0074, 
+    IDC_PRI_1HZ_IDLE, 0x403, 7, 0
+0x6f4c, 0x6577, 0x7473, "\000" 
+    IDC_PRI_1HZ_IDLE, 0x403, 13, 0
+0x6542, 0x6f6c, 0x2077, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_1HZ_IDLE, 0x403, 7, 0
+0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_1HZ_IDLE, 0x403, 13, 0
+0x6241, 0x766f, 0x2065, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_1HZ_IDLE, 0x403, 8, 0
+0x6948, 0x6867, 0x7365, 0x0074, 
+    IDC_PRI_PRAM_RUN, 0x403, 7, 0
+0x6f4c, 0x6577, 0x7473, "\000" 
+    IDC_PRI_PRAM_RUN, 0x403, 13, 0
+0x6542, 0x6f6c, 0x2077, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_PRAM_RUN, 0x403, 7, 0
+0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_PRAM_RUN, 0x403, 13, 0
+0x6241, 0x766f, 0x2065, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_PRAM_RUN, 0x403, 8, 0
+0x6948, 0x6867, 0x7365, 0x0074, 
+    IDC_PRI_PRAM_IDLE, 0x403, 7, 0
+0x6f4c, 0x6577, 0x7473, "\000" 
+    IDC_PRI_PRAM_IDLE, 0x403, 13, 0
+0x6542, 0x6f6c, 0x2077, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_PRAM_IDLE, 0x403, 7, 0
+0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_PRAM_IDLE, 0x403, 13, 0
+0x6241, 0x766f, 0x2065, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_PRAM_IDLE, 0x403, 8, 0
+0x6948, 0x6867, 0x7365, 0x0074, 
+    IDC_PRI_MOUSE_RUN, 0x403, 7, 0
+0x6f4c, 0x6577, 0x7473, "\000" 
+    IDC_PRI_MOUSE_RUN, 0x403, 13, 0
+0x6542, 0x6f6c, 0x2077, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_MOUSE_RUN, 0x403, 7, 0
+0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_MOUSE_RUN, 0x403, 13, 0
+0x6241, 0x766f, 0x2065, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_MOUSE_RUN, 0x403, 8, 0
+0x6948, 0x6867, 0x7365, 0x0074, 
+    IDC_PRI_MOUSE_IDLE, 0x403, 7, 0
+0x6f4c, 0x6577, 0x7473, "\000" 
+    IDC_PRI_MOUSE_IDLE, 0x403, 13, 0
+0x6542, 0x6f6c, 0x2077, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_MOUSE_IDLE, 0x403, 7, 0
+0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_MOUSE_IDLE, 0x403, 13, 0
+0x6241, 0x766f, 0x2065, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_MOUSE_IDLE, 0x403, 8, 0
+0x6948, 0x6867, 0x7365, 0x0074, 
+    IDC_PRI_GDI_RUN, 0x403, 7, 0
+0x6f4c, 0x6577, 0x7473, "\000" 
+    IDC_PRI_GDI_RUN, 0x403, 13, 0
+0x6542, 0x6f6c, 0x2077, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_GDI_RUN, 0x403, 7, 0
+0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_GDI_RUN, 0x403, 13, 0
+0x6241, 0x766f, 0x2065, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_GDI_RUN, 0x403, 8, 0
+0x6948, 0x6867, 0x7365, 0x0074, 
+    IDC_PRI_GDI_IDLE, 0x403, 7, 0
+0x6f4c, 0x6577, 0x7473, "\000" 
+    IDC_PRI_GDI_IDLE, 0x403, 13, 0
+0x6542, 0x6f6c, 0x2077, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_GDI_IDLE, 0x403, 7, 0
+0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_GDI_IDLE, 0x403, 13, 0
+0x6241, 0x766f, 0x2065, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_GDI_IDLE, 0x403, 8, 0
+0x6948, 0x6867, 0x7365, 0x0074, 
+    IDC_PRI_DX_RUN, 0x403, 7, 0
+0x6f4c, 0x6577, 0x7473, "\000" 
+    IDC_PRI_DX_RUN, 0x403, 13, 0
+0x6542, 0x6f6c, 0x2077, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_DX_RUN, 0x403, 7, 0
+0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_DX_RUN, 0x403, 13, 0
+0x6241, 0x766f, 0x2065, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_DX_RUN, 0x403, 8, 0
+0x6948, 0x6867, 0x7365, 0x0074, 
+    IDC_PRI_DX_IDLE, 0x403, 7, 0
+0x6f4c, 0x6577, 0x7473, "\000" 
+    IDC_PRI_DX_IDLE, 0x403, 13, 0
+0x6542, 0x6f6c, 0x2077, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_DX_IDLE, 0x403, 7, 0
+0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_DX_IDLE, 0x403, 13, 0
+0x6241, 0x766f, 0x2065, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_DX_IDLE, 0x403, 8, 0
+0x6948, 0x6867, 0x7365, 0x0074, 
+    IDC_PRI_LFB_RUN, 0x403, 7, 0
+0x6f4c, 0x6577, 0x7473, "\000" 
+    IDC_PRI_LFB_RUN, 0x403, 13, 0
+0x6542, 0x6f6c, 0x2077, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_LFB_RUN, 0x403, 7, 0
+0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_LFB_RUN, 0x403, 13, 0
+0x6241, 0x766f, 0x2065, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_LFB_RUN, 0x403, 8, 0
+0x6948, 0x6867, 0x7365, 0x0074, 
+    IDC_PRI_LFB_IDLE, 0x403, 7, 0
+0x6f4c, 0x6577, 0x7473, "\000" 
+    IDC_PRI_LFB_IDLE, 0x403, 13, 0
+0x6542, 0x6f6c, 0x2077, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_LFB_IDLE, 0x403, 7, 0
+0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_LFB_IDLE, 0x403, 13, 0
+0x6241, 0x766f, 0x2065, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_LFB_IDLE, 0x403, 8, 0
+0x6948, 0x6867, 0x7365, 0x0074, 
+    IDC_PRI_SOUND_STREAM_RUN, 0x403, 7, 0
+0x6f4c, 0x6577, 0x7473, "\000" 
+    IDC_PRI_SOUND_STREAM_RUN, 0x403, 13, 0
+0x6542, 0x6f6c, 0x2077, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_SOUND_STREAM_RUN, 0x403, 7, 0
+0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_SOUND_STREAM_RUN, 0x403, 13, 0
+0x6241, 0x766f, 0x2065, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_SOUND_STREAM_RUN, 0x403, 8, 0
+0x6948, 0x6867, 0x7365, 0x0074, 
+    IDC_PRI_SOUND_STREAM_IDLE, 0x403, 7, 0
+0x6f4c, 0x6577, 0x7473, "\000" 
+    IDC_PRI_SOUND_STREAM_IDLE, 0x403, 13, 0
+0x6542, 0x6f6c, 0x2077, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_SOUND_STREAM_IDLE, 0x403, 7, 0
+0x6f4e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_SOUND_STREAM_IDLE, 0x403, 13, 0
+0x6241, 0x766f, 0x2065, 0x6f6e, 0x6d72, 0x6c61, "\000" 
+    IDC_PRI_SOUND_STREAM_IDLE, 0x403, 8, 0
+0x6948, 0x6867, 0x7365, 0x0074, 
+    0
+END
+
+IDD_PAGE_DEBUG DLGINIT
+BEGIN
+    IDC_DEBUG_SCSI_LOG_LEVEL, 0x403, 34, 0
+0x464f, 0x3a46, 0x4e20, 0x206f, 0x4353, 0x4953, 0x6c20, 0x676f, 0x6967, 
+0x676e, 0x2820, 0x6f6e, 0x6d72, 0x6c61, 0x7520, 0x6573, 0x0029, 
+    IDC_DEBUG_SCSI_LOG_LEVEL, 0x403, 22, 0
+0x4e4f, 0x203a, 0x6f4c, 0x2067, 0x4353, 0x4953, 0x6320, 0x6d6f, 0x616d, 
+0x646e, 0x0073, 
+    IDC_DEBUG_SCSI_LOG_LEVEL, 0x403, 31, 0
+0x4e4f, 0x203a, 0x6f4c, 0x2067, 0x4353, 0x4953, 0x6320, 0x6d6f, 0x616d, 
+0x646e, 0x2073, 0x6e61, 0x2064, 0x6164, 0x6174, "\000" 
+    IDC_DEBUG_SERIAL_LOG_LEVEL, 0x403, 41, 0
+0x464f, 0x3a46, 0x4e20, 0x206f, 0x6553, 0x6972, 0x6c61, 0x5020, 0x726f, 
+0x2074, 0x6f6c, 0x6767, 0x6e69, 0x2067, 0x6e28, 0x726f, 0x616d, 0x206c, 
+0x7375, 0x2965, "\000" 
+    IDC_DEBUG_SERIAL_LOG_LEVEL, 0x403, 29, 0
+0x4e4f, 0x203a, 0x6f4c, 0x2067, 0x6553, 0x6972, 0x6c61, 0x5020, 0x726f, 
+0x2074, 0x6f63, 0x6d6d, 0x6e61, 0x7364, "\000" 
+    IDC_DEBUG_SERIAL_LOG_LEVEL, 0x403, 38, 0
+0x4e4f, 0x203a, 0x6f4c, 0x2067, 0x6553, 0x6972, 0x6c61, 0x5020, 0x726f, 
+0x2074, 0x6f63, 0x6d6d, 0x6e61, 0x7364, 0x6120, 0x646e, 0x6420, 0x7461, 
+0x0061, 
+    IDC_DEBUG_FILESYS_LOG_LEVEL, 0x403, 41, 0
+0x464f, 0x3a46, 0x4e20, 0x206f, 0x6946, 0x656c, 0x5320, 0x7379, 0x6574, 
+0x206d, 0x6f6c, 0x6767, 0x6e69, 0x2067, 0x6e28, 0x726f, 0x616d, 0x206c, 
+0x7375, 0x2965, "\000" 
+    IDC_DEBUG_FILESYS_LOG_LEVEL, 0x403, 29, 0
+0x4e4f, 0x203a, 0x6f4c, 0x2067, 0x6946, 0x656c, 0x5320, 0x7379, 0x6574, 
+0x206d, 0x6f63, 0x6d6d, 0x6e61, 0x7364, "\000" 
+    0
+END
+
+IDD_PAGE_ETHERNET DLGINIT
+BEGIN
+    IDC_ETHERNET_MODE, 0x403, 32, 0
+0x6547, 0x2074, 0x7041, 0x6c70, 0x5465, 0x6c61, 0x206b, 0x756d, 0x746c, 
+0x6369, 0x7361, 0x2074, 0x6170, 0x6b63, 0x7465, 0x0073, 
+    IDC_ETHERNET_MODE, 0x403, 26, 0
+0x6547, 0x2074, 0x6c61, 0x206c, 0x756d, 0x746c, 0x6369, 0x7361, 0x2074, 
+0x6170, 0x6b63, 0x7465, 0x0073, 
+    IDC_ETHERNET_MODE, 0x403, 31, 0
+0x7250, 0x6d6f, 0x7369, 0x7563, 0x756f, 0x2073, 0x6f6d, 0x6564, 0x2820, 
+0x4c41, 0x204c, 0x6170, 0x6b63, 0x7465, 0x2973, "\000" 
+    IDC_ETHERNET_PERMANENT, 0x403, 24, 0
+0x7355, 0x2065, 0x7563, 0x7272, 0x6e65, 0x2074, 0x494e, 0x2043, 0x6461, 
+0x7264, 0x7365, 0x0073, 
+    IDC_ETHERNET_PERMANENT, 0x403, 26, 0
+0x7355, 0x2065, 0x6570, 0x6d72, 0x6e61, 0x6e65, 0x2074, 0x494e, 0x2043, 
+0x6461, 0x7264, 0x7365, 0x0073, 
+    0
+END
+
+IDD_PAGE_MOUSE DLGINIT
+BEGIN
+    IDC_MOUSE_RIGHT_MOUSE, 0x403, 24, 0
+0x6f4d, 0x6576, 0x4220, 0x7361, 0x6c69, 0x7369, 0x206b, 0x4949, 0x7720, 
+0x6e69, 0x6f64, 0x0077, 
+    IDC_MOUSE_RIGHT_MOUSE, 0x403, 30, 0
+0x6553, 0x646e, 0x6320, 0x6e6f, 0x7274, 0x6c6f, 0x2620, 0x6320, 0x696c, 
+0x6b63, 0x7420, 0x206f, 0x614d, 0x4f63, 0x0053, 
+    IDC_MOUSE_MOVEMENT, 0x403, 27, 0
+0x6f4e, 0x6d72, 0x6c61, 0x4120, 0x4244, 0x6d20, 0x756f, 0x6573, 0x6520, 
+0x756d, 0x616c, 0x6974, 0x6e6f, "\000" 
+    IDC_MOUSE_MOVEMENT, 0x403, 34, 0
+0x6f4d, 0x6572, 0x6320, 0x6d6f, 0x6c70, 0x7465, 0x2065, 0x4441, 0x2042, 
+0x6f6d, 0x7375, 0x2065, 0x6d65, 0x6c75, 0x7461, 0x6f69, 0x006e, 
+    IDC_MOUSE_MOUSEWHEEL, 0x403, 21, 0
+0x6150, 0x6567, 0x6420, 0x776f, 0x206e, 0x726f, 0x7020, 0x6761, 0x2065, 
+0x7075, "\000" 
+    IDC_MOUSE_MOUSEWHEEL, 0x403, 23, 0
+0x694c, 0x656e, 0x2073, 0x6f64, 0x6e77, 0x6f20, 0x2072, 0x696c, 0x656e, 
+0x2073, 0x7075, "\000" 
+    IDC_MOUSE_MOUSEWHEEL_CLICK_MODE, 0x403, 25, 0
+0x6857, 0x6565, 0x206c, 0x6c63, 0x6369, 0x206b, 0x6f64, 0x7365, 0x6e20, 
+0x746f, 0x6968, 0x676e, "\000" 
+    IDC_MOUSE_MOUSEWHEEL_CLICK_MODE, 0x403, 45, 0
+0x6857, 0x6565, 0x206c, 0x6c63, 0x6369, 0x206b, 0x6f74, 0x6767, 0x656c, 
+0x2073, 0x6874, 0x2065, 0x2f78, 0x2079, 0x6373, 0x6f72, 0x6c6c, 0x6420, 
+0x7269, 0x6365, 0x6974, 0x6e6f, "\000" 
+    IDC_MOUSE_MOUSEWHEEL_CLICK_MODE, 0x403, 43, 0
+0x6857, 0x6565, 0x206c, 0x6c63, 0x6369, 0x206b, 0x6573, 0x646e, 0x2073, 
+0x2061, 0x4322, 0x6d6f, 0x616d, 0x646e, 0x2d20, 0x4c20, 0x6665, 0x2074, 
+0x7241, 0x6f72, 0x2277, "\000" 
+    IDC_MOUSE_MOUSEWHEEL_CLICK_MODE, 0x403, 40, 0
+0x6857, 0x6565, 0x206c, 0x6c63, 0x6369, 0x206b, 0x6573, 0x646e, 0x2073, 
+0x7563, 0x7473, 0x6d6f, 0x6b20, 0x7965, 0x6f62, 0x7261, 0x2064, 0x6f63, 
+0x6564, 0x0073, 
+    0
+END
+
+IDD_PAGE_TOOLS DLGINIT
+BEGIN
+    IDC_TOOLS_GUI_AUTORESTART, 0x403, 22, 0
+0x6f44, 0x276e, 0x2074, 0x6572, 0x7473, 0x7261, 0x2074, 0x6874, 0x2065, 
+0x5547, 0x0049, 
+    IDC_TOOLS_GUI_AUTORESTART, 0x403, 30, 0
+0x7541, 0x6f74, 0x616d, 0x6974, 0x6163, 0x6c6c, 0x2079, 0x6572, 0x7473, 
+0x7261, 0x2074, 0x6874, 0x2065, 0x5547, 0x0049, 
+    IDC_TOOLS_GUI_AUTORESTART, 0x403, 40, 0
+0x7541, 0x6f74, 0x616d, 0x6974, 0x6163, 0x6c6c, 0x2079, 0x6572, 0x7473, 
+0x7261, 0x2074, 0x6874, 0x2065, 0x5547, 0x2049, 0x696d, 0x696e, 0x696d, 
+0x657a, 0x0064, 
+    0
+END
+
+IDD_KEYBOARD_BACKUP DLGINIT
+BEGIN
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3030, 0x2020, 0x2720, 0x2741, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3130, 0x2020, 0x2720, 0x2753, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3230, 0x2020, 0x2720, 0x2744, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3330, 0x2020, 0x2720, 0x2746, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3430, 0x2020, 0x2720, 0x2748, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3530, 0x2020, 0x2720, 0x2747, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3630, 0x2020, 0x2720, 0x275a, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3730, 0x2020, 0x2720, 0x2758, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3830, 0x2020, 0x2720, 0x2743, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3930, 0x2020, 0x2720, 0x2756, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4130, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x4230, 0x2020, 0x2720, 0x2742, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x4330, 0x2020, 0x2720, 0x2751, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x4430, 0x2020, 0x2720, 0x2757, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x4530, 0x2020, 0x2720, 0x2745, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x4630, 0x2020, 0x2720, 0x2752, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3031, 0x2020, 0x2720, 0x2759, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3131, 0x2020, 0x2720, 0x2754, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3231, 0x2020, 0x2720, 0x2731, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3331, 0x2020, 0x2720, 0x2732, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3431, 0x2020, 0x2720, 0x2733, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3531, 0x2020, 0x2720, 0x2734, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3631, 0x2020, 0x2720, 0x2736, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3731, 0x2020, 0x2720, 0x2735, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3831, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3931, 0x2020, 0x2720, 0x2739, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x4131, 0x2020, 0x2720, 0x2737, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4231, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x4331, 0x2020, 0x2720, 0x2738, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x4431, 0x2020, 0x2720, 0x2730, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4531, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x4631, 0x2020, 0x2720, 0x274f, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3032, 0x2020, 0x2720, 0x2755, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3132, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3232, 0x2020, 0x2720, 0x2749, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3332, 0x2020, 0x2720, 0x2750, "\000" 
+    IDC_K_LIST, 0x403, 14, 0
+0x7830, 0x3432, 0x2020, 0x5220, 0x7465, 0x7275, 0x006e, 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3532, 0x2020, 0x2720, 0x274c, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3632, 0x2020, 0x2720, 0x274a, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3732, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3832, 0x2020, 0x2720, 0x274b, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3932, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4132, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4232, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4332, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x4432, 0x2020, 0x2720, 0x274e, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x4532, 0x2020, 0x2720, 0x274d, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4632, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3033, 0x2020, 0x5420, 0x6261, "\000" 
+    IDC_K_LIST, 0x403, 13, 0
+0x7830, 0x3133, 0x2020, 0x5320, 0x6170, 0x6563, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3233, "\000" 
+    IDC_K_LIST, 0x403, 17, 0
+0x7830, 0x3333, 0x2020, 0x4220, 0x6361, 0x736b, 0x6170, 0x6563, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3433, "\000" 
+    IDC_K_LIST, 0x403, 14, 0
+0x7830, 0x3533, 0x2020, 0x4520, 0x6373, 0x7061, 0x0065, 
+    IDC_K_LIST, 0x403, 15, 0
+0x7830, 0x3633, 0x2020, 0x4320, 0x6e6f, 0x7274, 0x6c6f, "\000" 
+    IDC_K_LIST, 0x403, 15, 0
+0x7830, 0x3733, 0x2020, 0x4320, 0x6d6f, 0x616d, 0x646e, "\000" 
+    IDC_K_LIST, 0x403, 13, 0
+0x7830, 0x3833, 0x2020, 0x5320, 0x6968, 0x7466, "\000" 
+    IDC_K_LIST, 0x403, 17, 0
+0x7830, 0x3933, 0x2020, 0x4320, 0x7061, 0x2073, 0x6f4c, 0x6b63, "\000" 
+    IDC_K_LIST, 0x403, 14, 0
+0x7830, 0x4133, 0x2020, 0x4f20, 0x7470, 0x6f69, 0x006e, 
+    IDC_K_LIST, 0x403, 12, 0
+0x7830, 0x4233, 0x2020, 0x4c20, 0x6665, 0x0074, 
+    IDC_K_LIST, 0x403, 13, 0
+0x7830, 0x4333, 0x2020, 0x5220, 0x6769, 0x7468, "\000" 
+    IDC_K_LIST, 0x403, 12, 0
+0x7830, 0x4433, 0x2020, 0x4420, 0x776f, 0x006e, 
+    IDC_K_LIST, 0x403, 10, 0
+0x7830, 0x4533, 0x2020, 0x5520, 0x0070, 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4633, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3034, "\000" 
+    IDC_K_LIST, 0x403, 22, 0
+0x7830, 0x3134, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x6564, 0x6963, 
+0x616d, 0x006c, 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3234, "\000" 
+    IDC_K_LIST, 0x403, 23, 0
+0x7830, 0x3334, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x756d, 0x746c, 
+0x7069, 0x796c, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3434, "\000" 
+    IDC_K_LIST, 0x403, 18, 0
+0x7830, 0x3534, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x6461, 0x0064, 
+
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3634, "\000" 
+    IDC_K_LIST, 0x403, 13, 0
+0x7830, 0x3734, 0x2020, 0x4320, 0x656c, 0x7261, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3834, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3934, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4134, "\000" 
+    IDC_K_LIST, 0x403, 21, 0
+0x7830, 0x4234, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x6964, 0x6976, 
+0x6564, "\000" 
+    IDC_K_LIST, 0x403, 24, 0
+0x7830, 0x4334, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x6573, 0x6170, 
+0x6172, 0x6f74, 0x0072, 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4434, "\000" 
+    IDC_K_LIST, 0x403, 23, 0
+0x7830, 0x4534, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x7573, 0x7462, 
+0x6172, 0x7463, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4634, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3035, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3135, "\000" 
+    IDC_K_LIST, 0x403, 16, 0
+0x7830, 0x3235, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x0030, 
+    IDC_K_LIST, 0x403, 16, 0
+0x7830, 0x3335, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x0031, 
+    IDC_K_LIST, 0x403, 16, 0
+0x7830, 0x3435, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x0032, 
+    IDC_K_LIST, 0x403, 16, 0
+0x7830, 0x3535, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x0033, 
+    IDC_K_LIST, 0x403, 16, 0
+0x7830, 0x3635, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x0034, 
+    IDC_K_LIST, 0x403, 16, 0
+0x7830, 0x3735, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x0035, 
+    IDC_K_LIST, 0x403, 16, 0
+0x7830, 0x3835, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x0036, 
+    IDC_K_LIST, 0x403, 16, 0
+0x7830, 0x3935, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x0037, 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4135, "\000" 
+    IDC_K_LIST, 0x403, 16, 0
+0x7830, 0x4235, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x0038, 
+    IDC_K_LIST, 0x403, 16, 0
+0x7830, 0x4335, 0x2020, 0x4e20, 0x6d75, 0x6170, 0x2064, 0x0039, 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4435, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4535, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4635, "\000" 
+    IDC_K_LIST, 0x403, 10, 0
+0x7830, 0x3036, 0x2020, 0x4620, 0x0035, 
+    IDC_K_LIST, 0x403, 10, 0
+0x7830, 0x3136, 0x2020, 0x4620, 0x0036, 
+    IDC_K_LIST, 0x403, 10, 0
+0x7830, 0x3236, 0x2020, 0x4620, 0x0037, 
+    IDC_K_LIST, 0x403, 10, 0
+0x7830, 0x3336, 0x2020, 0x4620, 0x0033, 
+    IDC_K_LIST, 0x403, 10, 0
+0x7830, 0x3436, 0x2020, 0x4620, 0x0038, 
+    IDC_K_LIST, 0x403, 10, 0
+0x7830, 0x3536, 0x2020, 0x4620, 0x0039, 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3636, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3736, 0x2020, 0x4620, 0x3131, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3836, "\000" 
+    IDC_K_LIST, 0x403, 13, 0
+0x7830, 0x3936, 0x2020, 0x5020, 0x6972, 0x746e, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4136, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x4236, 0x2020, 0x4620, 0x3431, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4336, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x4436, 0x2020, 0x4620, 0x3031, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4536, "\000" 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x4636, 0x2020, 0x4620, 0x3231, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3037, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3137, "\000" 
+    IDC_K_LIST, 0x403, 12, 0
+0x7830, 0x3237, 0x2020, 0x4820, 0x6c65, 0x0070, 
+    IDC_K_LIST, 0x403, 12, 0
+0x7830, 0x3337, 0x2020, 0x4820, 0x6d6f, 0x0065, 
+    IDC_K_LIST, 0x403, 15, 0
+0x7830, 0x3437, 0x2020, 0x5020, 0x6761, 0x2065, 0x7075, "\000" 
+    IDC_K_LIST, 0x403, 22, 0
+0x7830, 0x3537, 0x2020, 0x4620, 0x726f, 0x6177, 0x6472, 0x4420, 0x6c65, 
+0x7465, 0x0065, 
+    IDC_K_LIST, 0x403, 10, 0
+0x7830, 0x3637, 0x2020, 0x4620, 0x0034, 
+    IDC_K_LIST, 0x403, 11, 0
+0x7830, 0x3737, 0x2020, 0x4520, 0x646e, "\000" 
+    IDC_K_LIST, 0x403, 10, 0
+0x7830, 0x3837, 0x2020, 0x4620, 0x0032, 
+    IDC_K_LIST, 0x403, 17, 0
+0x7830, 0x3937, 0x2020, 0x5020, 0x6761, 0x2065, 0x6f64, 0x6e77, "\000" 
+    IDC_K_LIST, 0x403, 10, 0
+0x7830, 0x4137, 0x2020, 0x4620, 0x0031, 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4237, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4337, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4437, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4537, "\000" 
+    IDC_K_LIST, 0x403, 13, 0
+0x7830, 0x4637, 0x2020, 0x5020, 0x776f, 0x7265, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3038, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3138, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3238, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3338, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3438, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3538, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3638, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3738, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3838, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3938, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4138, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4238, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4338, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4438, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4538, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4638, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3039, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3139, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3239, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3339, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3439, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3539, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3639, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3739, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3839, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3939, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4139, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4239, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4339, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4439, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4539, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4639, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3041, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3141, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3241, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3341, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3441, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3541, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3641, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3741, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3841, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3941, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4141, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4241, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4341, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4441, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4541, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4641, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3042, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3142, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3242, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3342, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3442, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3542, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3642, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3742, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3842, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3942, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4142, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4242, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4342, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4442, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4542, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4642, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3043, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3143, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3243, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3343, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3443, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3543, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3643, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3743, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3843, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3943, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4143, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4243, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4343, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4443, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4543, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4643, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3044, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3144, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3244, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3344, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3444, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3544, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3644, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3744, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3844, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3944, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4144, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4244, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4344, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4444, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4544, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4644, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3045, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3145, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3245, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3345, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3445, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3545, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3645, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3745, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3845, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3945, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4145, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4245, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4345, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4445, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4545, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4645, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3046, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3146, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3246, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3346, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3446, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3546, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3646, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3746, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3846, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x3946, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4146, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4246, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4346, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4446, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4546, "\000" 
+    IDC_K_LIST, 0x403, 5, 0
+0x7830, 0x4646, "\000" 
+    0
+END
+
+IDD_PAGE_KEYBOARD DLGINIT
+BEGIN
+    IDC_KEYBOARD_TYPE, 0x403, 27, 0
+0x2031, 0x203a, 0x7041, 0x6c70, 0x2065, 0x654b, 0x6279, 0x616f, 0x6472, 
+0x4920, 0x2049, 0x5528, 0x2953, "\000" 
+    IDC_KEYBOARD_TYPE, 0x403, 36, 0
+0x2032, 0x203a, 0x7041, 0x6c70, 0x2065, 0x7845, 0x6574, 0x646e, 0x6465, 
+0x4b20, 0x7965, 0x6f62, 0x7261, 0x2064, 0x4949, 0x2820, 0x5355, 0x0029, 
+
+    IDC_KEYBOARD_TYPE, 0x403, 39, 0
+0x2033, 0x203a, 0x6d53, 0x6c61, 0x206c, 0x614d, 0x6963, 0x746e, 0x736f, 
+0x2068, 0x3135, 0x6b32, 0x4b20, 0x7965, 0x6f62, 0x7261, 0x2064, 0x5528, 
+0x2953, "\000" 
+    IDC_KEYBOARD_TYPE, 0x403, 25, 0
+0x2034, 0x203a, 0x7041, 0x6c70, 0x2065, 0x654b, 0x6279, 0x616f, 0x6472, 
+0x2820, 0x5349, 0x294f, "\000" 
+    IDC_KEYBOARD_TYPE, 0x403, 37, 0
+0x2035, 0x203a, 0x7041, 0x6c70, 0x2065, 0x7845, 0x6574, 0x646e, 0x6465, 
+0x4b20, 0x7965, 0x6f62, 0x7261, 0x2064, 0x4949, 0x2820, 0x5349, 0x294f, 
+"\000" 
+    IDC_KEYBOARD_TYPE, 0x403, 43, 0
+0x2036, 0x203a, 0x7041, 0x6c70, 0x2065, 0x614d, 0x6963, 0x746e, 0x736f, 
+0x2068, 0x6f50, 0x7472, 0x6261, 0x656c, 0x4b20, 0x7965, 0x6f62, 0x7261, 
+0x2064, 0x5528, 0x2953, "\000" 
+    IDC_KEYBOARD_TYPE, 0x403, 44, 0
+0x2037, 0x203a, 0x7041, 0x6c70, 0x2065, 0x614d, 0x6963, 0x746e, 0x736f, 
+0x2068, 0x6f50, 0x7472, 0x6261, 0x656c, 0x4b20, 0x7965, 0x6f62, 0x7261, 
+0x2064, 0x4928, 0x4f53, 0x0029, 
+    IDC_KEYBOARD_TYPE, 0x403, 37, 0
+0x2038, 0x203a, 0x7041, 0x6c70, 0x2065, 0x614d, 0x6963, 0x746e, 0x736f, 
+0x2068, 0x654b, 0x6279, 0x616f, 0x6472, 0x4920, 0x2049, 0x5528, 0x2953, 
+"\000" 
+    IDC_KEYBOARD_TYPE, 0x403, 38, 0
+0x2039, 0x203a, 0x7041, 0x6c70, 0x2065, 0x614d, 0x6963, 0x746e, 0x736f, 
+0x2068, 0x654b, 0x6279, 0x616f, 0x6472, 0x4920, 0x2049, 0x4928, 0x4f53, 
+0x0029, 
+    IDC_KEYBOARD_TYPE, 0x403, 40, 0
+0x3131, 0x203a, 0x614d, 0x6963, 0x746e, 0x736f, 0x2068, 0x6c50, 0x7375, 
+0x4b20, 0x7965, 0x6f62, 0x7261, 0x2064, 0x6977, 0x6874, 0x6b20, 0x7965, 
+0x6170, 0x0064, 
+    IDC_KEYBOARD_TYPE, 0x403, 38, 0
+0x3231, 0x203a, 0x614d, 0x6963, 0x746e, 0x736f, 0x2068, 0x6f50, 0x6577, 
+0x4272, 0x6f6f, 0x206b, 0x654b, 0x6279, 0x616f, 0x6472, 0x2820, 0x5355, 
+0x0029, 
+    IDC_KEYBOARD_TYPE, 0x403, 39, 0
+0x3331, 0x203a, 0x614d, 0x6963, 0x746e, 0x736f, 0x2068, 0x6f50, 0x6577, 
+0x4272, 0x6f6f, 0x206b, 0x654b, 0x6279, 0x616f, 0x6472, 0x2820, 0x5349, 
+0x294f, "\000" 
+    IDC_KEYBOARD_TYPE, 0x403, 33, 0
+0x3431, 0x203a, 0x7041, 0x6c70, 0x2065, 0x6441, 0x756a, 0x7473, 0x6261, 
+0x656c, 0x4b20, 0x7965, 0x6170, 0x2064, 0x5528, 0x2953, "\000" 
+    IDC_KEYBOARD_TYPE, 0x403, 30, 0
+0x3531, 0x203a, 0x7041, 0x6c70, 0x2065, 0x6441, 0x756a, 0x7473, 0x6261, 
+0x656c, 0x4b20, 0x7965, 0x6f62, 0x7261, 0x0064, 
+    IDC_KEYBOARD_TYPE, 0x403, 36, 0
+0x3831, 0x203a, 0x7041, 0x6c70, 0x2065, 0x6441, 0x756a, 0x7473, 0x6261, 
+0x656c, 0x4b20, 0x7965, 0x6f62, 0x7261, 0x2064, 0x4a28, 0x5349, 0x0029, 
+
+    IDC_KEYBOARD_TYPE, 0x403, 43, 0
+0x3132, 0x203a, 0x6f50, 0x6577, 0x4272, 0x6f6f, 0x206b, 0x3035, 0x2c30, 
+0x3431, 0x3030, 0x332c, 0x3034, 0x2c30, 0x3347, 0x6f20, 0x6972, 0x2e67, 
+0x2820, 0x494a, 0x2953, "\000" 
+    IDC_KEYBOARD_TYPE, 0x403, 28, 0
+0x3232, 0x203a, 0x7041, 0x6c70, 0x2065, 0x654b, 0x6279, 0x616f, 0x6472, 
+0x4920, 0x2049, 0x4a28, 0x5349, 0x0029, 
+    IDC_KEYBOARD_TYPE, 0x403, 32, 0
+0x3033, 0x203a, 0x6f50, 0x6577, 0x4272, 0x6f6f, 0x206b, 0x3432, 0x3030, 
+0x5320, 0x7265, 0x6569, 0x2073, 0x4a28, 0x5349, 0x0029, 
+    IDC_KEYBOARD_TYPE, 0x403, 30, 0
+0x3931, 0x3a37, 0x6f50, 0x6577, 0x4272, 0x6f6f, 0x206b, 0x3347, 0x5320, 
+0x7265, 0x6569, 0x2073, 0x4a28, 0x5349, 0x0029, 
+    IDC_KEYBOARD_TYPE, 0x403, 26, 0
+0x3032, 0x3a30, 0x4d69, 0x6361, 0x202c, 0x3347, 0x2820, 0x6c42, 0x6575, 
+0x2029, 0x4a28, 0x5349, 0x0029, 
+    IDC_KEYBOARD_TYPE, 0x403, 40, 0
+0x3532, 0x3a39, 0x6d53, 0x6c61, 0x206c, 0x614d, 0x6963, 0x746e, 0x736f, 
+0x2068, 0x3135, 0x6b32, 0x4b20, 0x7965, 0x6f62, 0x7261, 0x2064, 0x4928, 
+0x4f53, 0x0029, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About BasiliskIIGUI..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\BasiliskIIGUI.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

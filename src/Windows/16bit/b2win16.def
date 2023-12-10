@@ -1,0 +1,12 @@
+LIBRARY   B2WIN16
+EXETYPE   WINDOWS
+
+EXPORTS
+  THK_THUNKDATA16    @1  RESIDENTNAME
+  DllEntryPoint      @2  RESIDENTNAME
+	ReadFloppySectors  @3
+	WriteFloppySectors @4
+
+IMPORTS
+	C16ThkSL01      = KERNEL.631
+	ThunkConnect16  = KERNEL.651
